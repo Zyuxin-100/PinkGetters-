@@ -1,0 +1,100 @@
+<%- include('../partials/header', { title: '我的订单', isAuthenticated: true }) %>
+
+<link rel="stylesheet" href="/css/style.css"> 
+<script src="/js/common.js"></script>
+
+<main class="container my-5">
+    <!-- 返回按钮 -->
+    <div class="d-flex align-items-center mb-3">
+        <button onclick="history.back()" class="btn btn-back me-3" title="返回上一页">
+            <i class="bi bi-arrow-left"></i> 返回
+        </button>
+        <h2 class="mb-0 fw-bold">📦 我的订单</h2>
+    </div>
+    
+    <div class="row">
+        <div class="col-lg-3 mb-4">
+            <div class="list-group order-filter-card shadow-sm">
+                <a href="#" class="list-group-item list-group-item-action active" data-status="all">全部订单</a>
+                <a href="#" class="list-group-item list-group-item-action" data-status="pending_payment">待支付</a>
+                <a href="#" class="list-group-item list-group-item-action" data-status="pending_shipment">待发货</a>
+                <a href="#" class="list-group-item list-group-item-action" data-status="shipped">待收货</a>
+                <a href="#" class="list-group-item list-group-item-action" data-status="completed">已收货</a>
+                <a href="#" class="list-group-item list-group-item-action" data-status="cancelled">已取消</a>
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+            <div id="order-list-container">
+                <% if (orders && orders.length > 0) { %>
+                    <% orders.forEach(order => { %>
+                        <div class="order-card mb-4 p-4 shadow-sm" data-order-status="<%= order.status %>" data-order-id="<%= order.orderNumber %>">
+                            
+                            <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                                <div class="order-info-group">
+                                    <span class="text-muted small me-3">订单号: <strong class="order-number"><%= order.orderNumber %></strong></span>
+                                    <span class="text-muted small me-3">购买日期: <strong class="order-date"><%= order.orderDate %></strong></span>
+                                    <% if (order.status === 'pending_payment' && order.expireTime) { %>
+                                        <span class="text-danger small fw-bold" data-order-expire-time="<%= order.expireTime.toISOString() %>">
+                                            剩余支付时间: <strong class="order-countdown">--:--:--</strong>
+                                        </span>
+                                    <% } %>
+                                </div>
+                                <span class="badge order-status-badge fs-6 <%= order.status === 'pending_payment' ? 'bg-danger' : '' %>"><%= order.statusName %></span>
+                            </div>
+
+                            <div class="order-items-list mb-3">
+                                <% order.items.forEach(item => { %>
+                                    <div class="d-flex align-items-center py-2 order-item" data-product-id="<%= item.productId %>">
+                                        <img src="<%= item.imageUrl %>" class="product-image-mini me-3" alt="<%= item.name %>">
+                                        <div class="flex-grow-1">
+                                            <p class="mb-0 item-name fw-bold"><%= item.name %></p>
+                                            <p class="text-muted small mb-0">
+                                                规格：<%= item.specifications.join('，') %> / 数量：<%= item.quantity %>
+                                            </p>
+                                        </div>
+                                        <span class="item-price me-4">¥ <%= item.price.toFixed(2) %></span>
+                                    </div>
+                                <% }); %>
+                            </div>
+
+                            <div class="d-flex justify-content-end align-items-center pt-3 border-top">
+                                <span class="me-4 fw-bold">总计：<span class="order-total-price" style="color: #FF6B9D;">¥ <%= order.totalAmount.toFixed(2) %></span></span>
+                                
+                                <div class="order-actions" data-status="<%= order.status %>">
+                                    <% if (order.status === 'pending_payment') { %>
+                                        <button class="btn btn-outline-danger btn-sm me-2" data-action="cancel">取消订单</button>
+                                        <button class="btn btn-primary btn-sm me-2" data-action="pay">立即支付</button>
+                                        <button class="btn btn-outline-secondary btn-sm" data-action="reorder">再买一单</button>
+                                    <% } else if (order.status === 'completed') { %>
+                                        <button class="btn btn-outline-secondary btn-sm me-2" data-action="add-to-cart">加入购物车</button>
+                                        <button class="btn btn-outline-secondary btn-sm me-2" data-action="reorder">再买一单</button>
+                                        <button class="btn btn-danger btn-sm" data-action="delete">删除订单</button>
+                                    <% } else if (order.status === 'shipped') { %>
+                                        <button class="btn btn-outline-primary btn-sm me-2" data-action="view-logistics">查看物流</button>
+                                        <button class="btn btn-primary btn-sm" data-action="confirm-receipt">确认收货</button>
+                                    <% } else if (order.status === 'pending_shipment') { %>
+                                        <button class="btn btn-outline-danger btn-sm me-2" data-action="cancel">取消订单</button>
+                                        <button class="btn btn-outline-secondary btn-sm" data-action="reorder">再买一单</button>
+                                    <% } else { %>
+                                        <button class="btn btn-outline-secondary btn-sm" data-action="reorder">再买一单</button>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    <% }); %>
+                <% } else { %>
+                    <div class="text-center py-5">
+                        <i class="bi bi-inbox display-1 text-muted mb-3"></i>
+                        <h4 class="text-muted mb-3">暂无订单</h4>
+                        <a href="/shop/101" class="btn btn-primary">去购物</a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
+
+<script src="/js/order_list.js"></script>

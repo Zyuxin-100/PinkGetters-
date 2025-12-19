@@ -1,0 +1,105 @@
+<%- include('../partials/header', { title: '搜索', isAuthenticated: typeof isAuthenticated !== 'undefined' ? isAuthenticated : false, searchType, searchKeyword }) %>
+
+<main class="container my-5" data-search-type="<%= searchType %>">
+    <section class="mb-4 d-flex flex-wrap justify-content-between align-items-start gap-3">
+        <div>
+            <h1 class="page-title mb-2">搜索结果</h1>
+            <p class="text-muted mb-0">
+                搜索类型：<span id="search-type-label"><%= searchType === 'shop' ? '店铺' : '商品' %></span>
+                <span class="ms-3">关键词：<span id="search-key-label"><%= searchKeyword || '全部' %></span></span>
+            </p>
+        </div>
+        
+        <!-- 搜索控件 - 根据搜索类型显示不同的控件 -->
+        <div id="search-controls" class="d-flex flex-wrap align-items-center gap-3">
+            <!-- 商品搜索的排序和筛选控件 -->
+            <div id="product-search-controls" class="d-flex flex-wrap align-items-center gap-3 d-none">
+                <div class="sort-btn-group" role="group" aria-label="排序方式">
+                    <button type="button" class="sort-btn active" data-sort="new" title="按综合排序">
+                        <i class="bi bi-funnel"></i> 综合
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="sold_desc" title="按销量从高到低">
+                        <i class="bi bi-fire"></i> 热销
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="rating_desc" title="按评分从高到低">
+                        <i class="bi bi-star-fill"></i> 高分
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="price_asc" title="按价格从低到高">
+                        <i class="bi bi-arrow-down"></i> 价低
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="price_desc" title="按价格从高到低">
+                        <i class="bi bi-arrow-up"></i> 价高
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="btn-search-filter" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-funnel"></i> 筛选
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end p-4" aria-labelledby="btn-search-filter" style="min-width: 320px;">
+                        <div class="mb-4">
+                            <label class="form-label mb-2">
+                                <i class="bi bi-wallet2"></i> 价格区间 (¥)
+                            </label>
+                            <div class="d-flex align-items-center gap-2">
+                                <input type="number" class="form-control form-control-sm" id="search-filter-price-min" placeholder="最低" min="0">
+                                <span class="text-muted small" style="white-space:nowrap;">—</span>
+                                <input type="number" class="form-control form-control-sm" id="search-filter-price-max" placeholder="最高" min="0">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label mb-2">
+                                <i class="bi bi-star"></i> 最低评分
+                            </label>
+                            <select class="form-select form-select-sm" id="search-filter-rating">
+                                <option value="">不限</option>
+                                <option value="5">★★★★★ 5星</option>
+                                <option value="4">★★★★ 4星以上</option>
+                                <option value="3">★★★ 3星以上</option>
+                            </select>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="search-filter-instock">
+                            <label class="form-check-label" for="search-filter-instock">
+                                <i class="bi bi-box"></i> 仅看有货
+                            </label>
+                        </div>
+                        <div class="filter-actions">
+                            <button type="button" class="btn btn-light btn-sm" id="search-filter-reset">
+                                <i class="bi bi-arrow-counterclockwise"></i> 重置
+                            </button>
+                            <button type="button" class="btn btn-primary btn-sm" id="search-filter-apply">
+                                <i class="bi bi-check-circle"></i> 应用
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 店铺搜索的排序控件 -->
+            <div id="shop-search-controls" class="d-flex flex-wrap align-items-center gap-3 d-none">
+                <div class="sort-btn-group" role="group" aria-label="店铺排序方式">
+                    <button type="button" class="sort-btn active" data-sort="sales_desc" title="按销量从高到低">
+                        <i class="bi bi-fire"></i> 销量
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="products_desc" title="按商品数量从多到少">
+                        <i class="bi bi-box"></i> 商品数
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="rating_desc" title="按好评率从高到低">
+                        <i class="bi bi-star-fill"></i> 好评率
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="search-results">
+        <div class="row g-4" id="search-result-list">
+            <div class="col-12 text-center py-5">
+                <div class="loading-placeholder" style="height: 200px; border-radius: 16px;"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer') %>
+

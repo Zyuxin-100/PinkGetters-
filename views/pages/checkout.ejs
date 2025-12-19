@@ -1,0 +1,179 @@
+<%- include('../partials/header', { title: '确认订单', isAuthenticated: isAuthenticated }) %>
+
+<main class="container my-5">
+    <div class="row">
+        <!-- 左侧：收货地址和订单信息 -->
+        <div class="col-lg-8">
+            <!-- 收货地址 -->
+            <section class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">
+                        <i class="bi bi-geo-alt text-primary me-2"></i>确认收货地址
+                    </h5>
+                    <div>
+                        <button class="btn btn-outline-primary btn-sm me-2" id="btn-use-new-address">使用新地址</button>
+                        <button class="btn btn-outline-secondary btn-sm" id="btn-manage-address">管理地址</button>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="address-list">
+                        <% if (addresses && addresses.length > 0) { %>
+                            <% addresses.forEach((address, index) => { %>
+                                <div class="address-item p-3 border rounded mb-3 <%= address.is_default ? 'address-selected' : '' %>" data-address-id="<%= address.id %>">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="flex-grow-1">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <% if (address.is_default) { %>
+                                                    <span class="badge bg-primary me-2">默认</span>
+                                                <% } %>
+                                                <strong><%= address.province %> <%= address.city %> <%= address.district %></strong>
+                                            </div>
+                                            <div class="text-muted mb-2"><%= address.detail_address %></div>
+                                            <div class="d-flex align-items-center">
+                                                <span class="me-3"><%= address.receiver_name %> <%= address.receiver_phone %></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input address-radio" type="radio" name="selectedAddress" value="<%= address.id %>" <%= address.is_default ? 'checked' : '' %>>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% }); %>
+                        <% } else { %>
+                            <div class="text-center py-4">
+                                <i class="bi bi-geo-alt text-muted display-4"></i>
+                                <p class="text-muted mt-2">暂无收货地址</p>
+                                <button class="btn btn-primary" id="btn-add-first-address">添加收货地址</button>
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 订单信息 -->
+            <section class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-bag-check text-primary me-2"></i>确认订单信息
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div id="order-items-list">
+                        <!-- 订单商品将通过JavaScript动态加载 -->
+                        <div class="text-center py-4">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">加载中...</span>
+                            </div>
+                            <p class="text-muted mt-2">正在加载订单信息...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 右侧：支付方式和订单总计 -->
+        <div class="col-lg-4">
+            <!-- 支付方式 -->
+            <section class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-credit-card text-primary me-2"></i>支付方式
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="payment-methods">
+                        <div class="form-check mb-3 p-3 border rounded payment-option" data-payment="alipay">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="alipay" value="alipay" checked>
+                            <label class="form-check-label d-flex align-items-center" for="alipay">
+                                <div class="payment-icon me-3">
+                                    <i class="bi bi-phone text-primary" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">支付宝</div>
+                                    <small class="text-muted">推荐使用支付宝快捷支付</small>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-3 p-3 border rounded payment-option" data-payment="wechat">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="wechat" value="wechat">
+                            <label class="form-check-label d-flex align-items-center" for="wechat">
+                                <div class="payment-icon me-3">
+                                    <i class="bi bi-wechat text-success" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">微信支付</div>
+                                    <small class="text-muted">使用微信扫码支付</small>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="form-check mb-3 p-3 border rounded payment-option" data-payment="unionpay">
+                            <input class="form-check-input" type="radio" name="paymentMethod" id="unionpay" value="unionpay">
+                            <label class="form-check-label d-flex align-items-center" for="unionpay">
+                                <div class="payment-icon me-3">
+                                    <i class="bi bi-credit-card text-info" style="font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <div class="fw-bold">银联支付</div>
+                                    <small class="text-muted">支持各大银行卡</small>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 订单总计 -->
+            <section class="card position-sticky" style="top: 100px;">
+                <div class="card-header">
+                    <h5 class="mb-0">
+                        <i class="bi bi-calculator text-primary me-2"></i>订单总计
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="order-summary">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>商品总价：</span>
+                            <span id="subtotal-amount">¥ 0.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>运费：</span>
+                            <span id="shipping-amount" class="text-success">免运费</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>优惠：</span>
+                            <span id="discount-amount" class="text-danger">-¥ 0.00</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-3">
+                            <strong>实付款：</strong>
+                            <strong class="text-primary" style="font-size: 1.2rem;" id="total-amount">¥ 0.00</strong>
+                        </div>
+                        
+                        <!-- 优惠券 -->
+                        <div class="mb-3">
+                            <button class="btn btn-outline-warning btn-sm w-100" id="btn-coupon">
+                                <i class="bi bi-ticket-perforated me-2"></i>选择优惠券
+                            </button>
+                        </div>
+
+                        <!-- 提交订单按钮 -->
+                        <button class="btn btn-primary btn-lg w-100" id="btn-submit-order">
+                            <i class="bi bi-check-circle me-2"></i>提交订单
+                        </button>
+                        
+                        <div class="text-center mt-3">
+                            <small class="text-muted">
+                                点击"提交订单"表示您同意
+                                <a href="#" class="text-decoration-none">《购买协议》</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>

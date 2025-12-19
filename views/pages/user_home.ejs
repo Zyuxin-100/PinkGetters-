@@ -1,0 +1,129 @@
+<%- include('../partials/header', { title: '个人中心', isAuthenticated: true }) %>
+
+<link rel="stylesheet" href="/css/style.css"> 
+
+<main>
+    <section class="user-profile-bg mb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="<%= user.avatar || 'https://via.placeholder.com/100?text=Avatar' %>" class="avatar me-4" alt="用户头像">
+                        <div>
+                            <h3 class="fw-bold mb-0" id="user-username">欢迎回来，<%= user.username %></h3>
+                            <p class="text-muted mb-0" id="user-email"><%= user.email || '未设置邮箱' %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mb-5">
+        
+        <section class="mb-5">
+            <div class="profile-card p-4">
+                <h4 class="mb-4 fw-bold">我的订单</h4>
+                <div class="row text-center">
+                    <div class="col order-status-item">
+                        <a href="/user/orders" class="text-decoration-none d-block text-dark">
+                            <i class="bi bi-card-list order-status-icon"></i>
+                            <p class="mb-0 mt-2 small">全部订单</p>
+                        </a>
+                    </div>
+                    
+                    <div class="col order-status-item">
+                        <a href="/user/orders?status=pending_payment" class="text-decoration-none d-block text-dark">
+                            <i class="bi bi-wallet order-status-icon"></i>
+                            <p class="mb-0 mt-2 small">待付款</p>
+                            <% if (orderCounts.pending_payment > 0) { %>
+                                <span class="badge bg-danger rounded-pill" id="count-payment"><%= orderCounts.pending_payment %></span>
+                            <% } %>
+                        </a>
+                    </div>
+                    
+                    <div class="col order-status-item">
+                        <a href="/user/orders?status=pending_shipment" class="text-decoration-none d-block text-dark">
+                            <i class="bi bi-box-seam order-status-icon"></i>
+                            <p class="mb-0 mt-2 small">待发货</p>
+                            <% if (orderCounts.pending_shipment > 0) { %>
+                                <span class="badge bg-danger rounded-pill" id="count-shipment"><%= orderCounts.pending_shipment %></span>
+                            <% } %>
+                        </a>
+                    </div>
+                    
+                    <div class="col order-status-item">
+                        <a href="/user/orders?status=shipped" class="text-decoration-none d-block text-dark">
+                            <i class="bi bi-truck order-status-icon"></i>
+                            <p class="mb-0 mt-2 small">待收货</p>
+                            <% if (orderCounts.shipped > 0) { %>
+                                <span class="badge bg-danger rounded-pill" id="count-receipt"><%= orderCounts.shipped %></span>
+                            <% } %>
+                        </a>
+                    </div>
+                    
+                    <div class="col order-status-item">
+                        <a href="/user/orders?status=completed" class="text-decoration-none d-block text-dark">
+                            <i class="bi bi-chat-dots order-status-icon"></i>
+                            <p class="mb-0 mt-2 small">待评价</p>
+                            <% if (orderCounts.pending_review > 0) { %>
+                                <span class="badge bg-danger rounded-pill" id="count-review"><%= orderCounts.pending_review %></span>
+                            <% } %>
+                        </a>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="profile-card p-4">
+                <h4 class="mb-4 fw-bold">常用服务</h4>
+                <div class="row row-cols-4 g-3 text-center">
+                    
+                    <div class="col quick-link-item">
+                        <a href="/cart" class="text-decoration-none text-dark">
+                            <i class="bi bi-cart3 quick-link-icon"></i>
+                            <p class="mb-0 mt-2 small">购物车</p>
+                        </a>
+                    </div>
+                    
+                    <div class="col quick-link-item">
+                        <a href="/user/favorites" class="text-decoration-none text-dark">
+                            <i class="bi bi-heart quick-link-icon"></i>
+                            <p class="mb-0 mt-2 small">收藏夹</p>
+                        </a>
+                    </div>
+                    
+                    <div class="col quick-link-item">
+                        <a href="/user/history" class="text-decoration-none text-dark">
+                            <i class="bi bi-clock-history quick-link-icon"></i>
+                            <p class="mb-0 mt-2 small">浏览记录</p>
+                        </a>
+                    </div>
+                    
+                    <div class="col quick-link-item">
+                        <a href="/user/coupons" class="text-decoration-none text-dark">
+                            <i class="bi bi-ticket-perforated quick-link-icon"></i>
+                            <p class="mb-0 mt-2 small">优惠券</p>
+                        </a>
+                    </div>
+
+                     <div class="col quick-link-item">
+                        <a href="/user/follow" class="text-decoration-none text-dark">
+                            <i class="bi bi-people quick-link-icon"></i>
+                            <p class="mb-0 mt-2 small">我的关注</p>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        </div>
+</main>
+
+<%- include('../partials/footer') %>
+
+<script src="/js/user_home.js"></script>

@@ -1,0 +1,145 @@
+<%- include('../partials/header', { title: '首页', isAuthenticated: typeof isAuthenticated !== 'undefined' ? isAuthenticated : false }) %>
+
+<main class="container my-5">
+    <!-- 轮播图 -->
+    <section class="mb-5 hero-section">
+        <div class="row g-4 align-items-stretch">
+            <div class="col-12 col-lg-3">
+                <div class="card hot-rank-card h-100">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="badge bg-soft-pink text-primary fw-bold">HOT</span>
+                            <span class="fw-semibold">热销 / 大家都在看</span>
+                        </div>
+                        <a href="/categories" class="text-decoration-none small" style="color: var(--primary-color);">更多</a>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="hot-rank-list" id="hot-rank-list">
+                            <div class="text-center py-4">
+                                <div class="loading-placeholder mx-3" style="height: 280px; border-radius: 12px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-9">
+                <div id="carouselExample" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="4000">
+                    <div class="carousel-inner h-100">
+                        <div class="carousel-item active h-100">
+                            <div class="carousel-banner h-100" style="background: linear-gradient(135deg, rgba(255,107,157,0.75), rgba(255,182,193,0.75)), url('https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1400&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white;">
+                                <div class="text-center">
+                                    <h1 class="display-4 fw-bold mb-3">🌸 春季新品上市</h1>
+                                    <p class="lead mb-4">精选好物，温暖你的每一天</p>
+                                    <a href="/categories" class="btn btn-light btn-lg px-5" style="border-radius: 30px;">立即选购</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100">
+                            <div class="carousel-banner h-100" style="background: linear-gradient(135deg, rgba(255,182,193,0.78), rgba(255,192,203,0.78)), url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1400&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white;">
+                                <div class="text-center">
+                                    <h1 class="display-4 fw-bold mb-3">💝 限时特惠</h1>
+                                    <p class="lead mb-4">全场商品低至5折起</p>
+                                    <a href="/categories" class="btn btn-light btn-lg px-5" style="border-radius: 30px;">查看详情</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item h-100">
+                            <div class="carousel-banner h-100" style="background: linear-gradient(135deg, rgba(255,192,203,0.78), rgba(255,182,193,0.78)), url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1400&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; color: white;">
+                                <div class="text-center">
+                                    <h1 class="display-4 fw-bold mb-3">🎁 满减活动</h1>
+                                    <p class="lead mb-4">满299减50，满499减100</p>
+                                    <a href="/categories" class="btn btn-light btn-lg px-5" style="border-radius: 30px;">立即参与</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品分类 -->
+    <section class="mb-5">
+        <h2 class="section-title"><a href="/categories" class="categories-title-link">✨ 商品分类</a></h2>
+
+        <div class="categories-wrapper">
+            <div id="categories-scroll-view" class="categories-scroll-view">
+                <!-- 分类将通过AJAX动态加载为 .cat-slot 元素 -->
+                <div class="col-12 text-center py-5">
+                    <div class="loading-placeholder" style="height: 200px;"></div>
+                </div>
+            </div>
+
+            <!-- 右侧 control slot is rendered as the 7th .cat-slot inside the scroll view -->
+        </div>
+    </section>
+
+    <!-- 推荐商品 -->
+    <section class="mb-5" aria-label="推荐商品区域">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="section-title mb-0">🔥 推荐商品</h2>
+            <a href="/categories" class="text-decoration-none" style="color: var(--primary-color);">
+                查看更多 <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+        <div class="row g-4" id="featured-products" role="list">
+            <!-- 商品将通过AJAX动态加载 -->
+            <div class="col-12">
+                <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 d-none d-md-block">
+                        <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 d-none d-lg-block">
+                        <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新商品 -->
+    <section aria-label="最新商品区域">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="section-title mb-0">🆕 最新商品</h2>
+            <a href="/categories" class="text-decoration-none" style="color: var(--primary-color);">
+                查看更多 <i class="bi bi-arrow-right"></i>
+            </a>
+        </div>
+        <div class="row g-4" id="latest-products" role="list">
+            <!-- 商品将通过AJAX动态加载 -->
+            <div class="col-12">
+                <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3">
+                        <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 d-none d-md-block">
+                        <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+                    </div>
+                    <div class="col-6 col-md-4 col-lg-3 d-none d-lg-block">
+                        <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer') %>
+

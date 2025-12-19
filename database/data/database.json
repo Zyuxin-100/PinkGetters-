@@ -1,0 +1,2541 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "$2b$10$UlCJ0S0XCVOzsfQ3InI7BuTz7192ZXTnCV222.TV5wMpE7NsBYajK",
+      "email": "admin@example.com",
+      "phone": "13800138000",
+      "avatar": "https://picsum.photos/100/100?random=1000",
+      "address": "北京市朝阳区",
+      "id": 1,
+      "created_at": "2025-12-10T07:12:18.899Z"
+    },
+    {
+      "username": "customer1",
+      "password": "$2b$10$UlCJ0S0XCVOzsfQ3InI7BuTz7192ZXTnCV222.TV5wMpE7NsBYajK",
+      "email": "customer1@example.com",
+      "phone": "13900139000",
+      "avatar": "https://picsum.photos/100/100?random=1001",
+      "address": "上海市浦东新区",
+      "id": 2,
+      "created_at": "2025-12-10T08:00:00.000Z"
+    },
+    {
+      "username": "1111",
+      "password": "$2b$12$L8ovHcCvfR08R4Qc6oH9Y.zEO.AsW1xm9l68kcx0uKH55cwATlALK",
+      "email": "123452@email.com",
+      "phone": null,
+      "avatar": "https://picsum.photos/100/100?random=1765528299129",
+      "address": null,
+      "created_at": "2025-12-12T08:31:39.129Z",
+      "id": 3
+    },
+    {
+      "username": "123",
+      "password": "$2b$12$UpRnaCA.Aob1o4x6RiDPYe0cGGdrOBs911O8JK.tC5yTTKgjpVlC6",
+      "email": "11@email.cn",
+      "phone": "13678903456",
+      "avatar": "https://picsum.photos/100/100?random=1765528524061",
+      "address": null,
+      "created_at": "2025-12-12T08:35:24.061Z",
+      "id": 4
+    }
+  ],
+  "categories": [
+    {
+      "name": "电子产品",
+      "description": "手机、电脑、数码产品等",
+      "icon": "laptop",
+      "image_url": "https://picsum.photos/400/300?random=2001",
+      "parent_id": null,
+      "id": 1,
+      "created_at": "2025-12-10T07:12:18.902Z"
+    },
+    {
+      "name": "服装配饰",
+      "description": "服装、鞋帽、配饰等",
+      "icon": "handbag",
+      "image_url": "https://picsum.photos/400/300?random=2002",
+      "parent_id": null,
+      "id": 2,
+      "created_at": "2025-12-10T07:12:18.903Z"
+    },
+    {
+      "name": "食品饮料",
+      "description": "零食、饮料、生鲜等",
+      "icon": "cup",
+      "image_url": "https://picsum.photos/400/300?random=2003",
+      "parent_id": null,
+      "id": 3,
+      "created_at": "2025-12-10T07:12:18.903Z"
+    },
+    {
+      "name": "图书文具",
+      "description": "图书、文具、办公用品",
+      "icon": "book",
+      "image_url": "https://picsum.photos/400/300?random=2004",
+      "parent_id": null,
+      "id": 4,
+      "created_at": "2025-12-10T07:12:18.903Z"
+    },
+    {
+      "name": "家居生活",
+      "description": "家具、家纺、日用品",
+      "icon": "house-door",
+      "image_url": "https://picsum.photos/400/300?random=2005",
+      "parent_id": null,
+      "id": 5,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    },
+    {
+      "name": "运动户外",
+      "description": "运动器材、户外装备",
+      "icon": "bicycle",
+      "image_url": "https://picsum.photos/400/300?random=2006",
+      "parent_id": null,
+      "id": 6,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    },
+    {
+      "name": "母婴用品",
+      "description": "婴儿用品、孕妇装等",
+      "icon": "moisture",
+      "image_url": "https://picsum.photos/400/300?random=2007",
+      "parent_id": null,
+      "id": 7,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    },
+    {
+      "name": "美妆护肤",
+      "description": "化妆品、护肤品、个人护理",
+      "icon": "heart",
+      "image_url": "https://picsum.photos/400/300?random=2008",
+      "parent_id": null,
+      "id": 8,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    },
+    {
+      "name": "汽车用品",
+      "description": "汽车配件、装饰、保养",
+      "icon": "car-front",
+      "image_url": "https://picsum.photos/400/300?random=2010",
+      "parent_id": null,
+      "id": 9,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    },
+    {
+      "name": "宠物用品",
+      "description": "宠物食品、玩具、护理",
+      "icon": "balloon-heart",
+      "image_url": "https://picsum.photos/400/300?random=2011",
+      "parent_id": null,
+      "id": 10,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    }
+  ],
+  "shops": [
+    {
+      "name": "数码旗舰店",
+      "description": "专业销售各类数码产品，正品保证",
+      "owner_id": 1,
+      "logo_url": "/images/products/数码店头像.png",
+      "banner_url": "/images/products/数码店头像.png",
+      "address": "深圳市南山区科技园",
+      "phone": "0755-12345678",
+      "rating": 4.8,
+      "categories": [
+        "手机通讯",
+        "电脑办公",
+        "数码配件",
+        "智能穿戴",
+        "家用电器"
+      ],
+      "id": 1,
+      "created_at": "2025-12-10T07:12:18.904Z"
+    },
+    {
+      "name": "时尚服饰店",
+      "description": "潮流服饰，时尚搭配",
+      "owner_id": 1,
+      "logo_url": "/images/products/时尚服饰店头像.png",
+      "banner_url": "/images/products/时尚服饰店头像.png",
+      "address": "广州市天河区",
+      "phone": "020-87654321",
+      "rating": 4.5,
+      "categories": [
+        "上衣",
+        "下装",
+        "连衣裙",
+        "鞋靴",
+        "配饰"
+      ],
+      "id": 2,
+      "created_at": "2025-12-10T07:12:18.904Z"
+    },
+    {
+      "name": "美食天地",
+      "description": "各种美食，尽在这里",
+      "owner_id": 1,
+      "logo_url": "/images/products/零食店头像.png",
+      "banner_url": "/images/products/坚果礼包.png",
+      "address": "成都市锦江区",
+      "phone": "028-23456789",
+      "rating": 4.7,
+      "categories": [
+        "零食小食",
+        "饮品茶酒",
+        "营养保健",
+        "生鲜食品",
+        "烘焙甜品"
+      ],
+      "id": 3,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    },
+    {
+      "name": "智慧书屋",
+      "description": "书中自有黄金屋",
+      "owner_id": 1,
+      "logo_url": "/images/products/书店头像.png",
+      "banner_url": "/images/products/书店头像.png",
+      "address": "成都市锦江区",
+      "phone": "028-23452289",
+      "rating": 4.9,
+      "categories": [
+        "学习教育",
+        "文具工具",
+        "儿童读物"
+      ],
+      "id": 4,
+      "created_at": "2025-12-10T07:12:18.907Z"
+    },
+    {
+      "name": "强身健体馆",
+      "description": "运动使我快乐，运动使我健康",
+      "owner_id": 1,
+      "logo_url": "/images/products/健身店头像.png",
+      "banner_url": "/images/products/运动套装.png",
+      "address": "成都市双流区",
+      "phone": "028-23452289",
+      "rating": 4.5,
+      "categories": [
+        "营养补充",
+        "锻炼器材",
+        "锻炼服饰"
+      ],
+      "id": 5,
+      "created_at": "2025-12-10T07:12:18.907Z"
+    },
+    {
+      "name": "家居生活馆",
+      "description": "温馨家居，品质生活，让家更美好",
+      "owner_id": 2,
+      "logo_url": "/images/products/家居店头像.png",
+      "banner_url": "/images/products/家居店头像.png",
+      "address": "杭州市西湖区文三路",
+      "phone": "0571-88888888",
+      "rating": 4.6,
+      "categories": [
+        "家具家装",
+        "厨房用品",
+        "卫浴用品",
+        "家纺布艺",
+        "收纳整理"
+      ],
+      "id": 6,
+      "created_at": "2025-12-11T10:30:00.000Z"
+    },
+    {
+      "name": "宠物乐园",
+      "description": "爱宠之家，专业宠物用品一站式购物",
+      "owner_id": 2,
+      "logo_url": "/images/products/宠物店头像.png",
+      "banner_url": "/images/products/宠物店头像.png",
+      "address": "北京市朝阳区三里屯",
+      "phone": "010-66666666",
+      "rating": 4.8,
+      "categories": [
+        "宠物食品",
+        "宠物玩具",
+        "宠物用品",
+        "宠物护理",
+        "宠物服饰"
+      ],
+      "id": 7,
+      "created_at": "2025-12-11T11:00:00.000Z"
+    },
+    {
+      "name": "母婴童品店",
+      "description": "呵护成长每一步，专业母婴用品专家",
+      "owner_id": 1,
+      "logo_url": "/images/products/母婴店头像.png",
+      "banner_url": "/images/products/母婴店头像.png",
+      "address": "上海市浦东新区陆家嘴",
+      "phone": "021-55555555",
+      "rating": 4.9,
+      "categories": [
+        "婴儿奶粉",
+        "婴儿用品",
+        "儿童玩具",
+        "孕妇用品",
+        "童装童鞋"
+      ],
+      "id": 8,
+      "created_at": "2025-12-11T11:30:00.000Z"
+    },
+    {
+      "name": "汽车用品城",
+      "description": "专业汽车用品，让您的爱车更出色",
+      "owner_id": 2,
+      "logo_url": "/images/products/汽车店头像.png",
+      "banner_url": "/images/products/汽车店头像.png",
+      "address": "广州市番禺区大石镇",
+      "phone": "020-33333333",
+      "rating": 4.4,
+      "categories": [
+        "汽车装饰",
+        "汽车电子",
+        "汽车保养",
+        "汽车配件",
+        "车载用品"
+      ],
+      "id": 9,
+      "created_at": "2025-12-11T12:00:00.000Z"
+    },
+    {
+      "name": "美妆护肤馆",
+      "description": "美丽从这里开始，专业美妆护肤品牌集合店",
+      "owner_id": 1,
+      "logo_url": "/images/products/美妆店头像.png",
+      "banner_url": "/images/products/美妆店头像.png",
+      "address": "深圳市福田区华强北",
+      "phone": "0755-77777777",
+      "rating": 4.7,
+      "categories": [
+        "面部护肤",
+        "彩妆用品",
+        "身体护理",
+        "香水香氛",
+        "美容工具"
+      ],
+      "id": 10,
+      "created_at": "2025-12-11T12:30:00.000Z"
+    }
+  ],
+  "products": [
+    {
+      "name": "iPhone 15 Pro",
+      "sku": "IPHONE-15PRO",
+      "barcode": "6900000000001",
+      "brand": "Apple",
+      "tags": [
+        "手机",
+        "数码",
+        "热销"
+      ],
+      "attributes": {
+        "storage": [
+          "256GB",
+          "512GB"
+        ],
+        "color": [
+          "深空黑色",
+          "钛白"
+        ]
+      },
+      "variants": [
+        {
+          "sku": "IPHONE-15PRO-256-BK",
+          "price": 8999,
+          "attributes": {
+            "storage": "256GB",
+            "color": "深空黑色"
+          },
+          "stock": 30
+        }
+      ],
+      "description": "苹果最新旗舰手机，A17 Pro芯片，钛金属边框，电子屏幕，支持5G",
+      "price": 8999,
+      "original_price": 9999,
+      "stock": 50,
+      "sold": 120,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/iphone15.png",
+      "images": [
+        "/images/products/iphone15.png",
+        "/images/products/iphone15.png",
+        "/images/products/iphone15.png"
+      ],
+      "specs": "256GB, 深空黑色, 支持5G",
+      "weight_grams": 187,
+      "dimensions_cm": {
+        "length": 14.7,
+        "width": 7,
+        "height": 0.8
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 250
+      },
+      "warranty": "1年",
+      "rating": 4.9,
+      "reviews": 356,
+      "is_hot": true,
+      "is_new": true,
+      "id": 1,
+      "created_at": "2025-12-10T07:12:18.905Z"
+    },
+    {
+      "name": "MacBook Pro 14寸",
+      "sku": "MACBOOK-14PRO",
+      "barcode": "6900000000002",
+      "brand": "Apple",
+      "tags": [
+        "笔记本",
+        "专业"
+      ],
+      "attributes": {
+        "memory": [
+          "16GB"
+        ],
+        "storage": [
+          "512GB",
+          "1TB"
+        ]
+      },
+      "variants": [],
+      "description": "苹果专业笔记本电脑，M3 Pro芯片，Liquid视网膜XDR显示屏，电子屏幕，支持5G",
+      "price": 15999,
+      "original_price": 17999,
+      "stock": 30,
+      "sold": 85,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/macbook.png",
+      "images": [
+        "/images/products/macbook.png",
+        "/images/products/macbook.png"
+      ],
+      "specs": "16GB内存, 512GB SSD, 银色",
+      "weight_grams": 1600,
+      "dimensions_cm": {
+        "length": 32,
+        "width": 22,
+        "height": 1.5
+      },
+      "shipping": {
+        "type": "bulky",
+        "weight_grams": 1800
+      },
+      "warranty": "1年",
+      "rating": 4.8,
+      "reviews": 243,
+      "is_hot": true,
+      "is_new": false,
+      "id": 2,
+      "created_at": "2025-12-10T07:12:18.907Z"
+    },
+    {
+      "name": "纯棉男士T恤",
+      "sku": "TSHIRT-MEN",
+      "barcode": "6900000000003",
+      "brand": "示例品牌",
+      "tags": [
+        "T恤",
+        "棉质",
+        "夏季"
+      ],
+      "attributes": {
+        "size": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "color": [
+          "白色",
+          "黑色",
+          "蓝色"
+        ]
+      },
+      "variants": [],
+      "description": "100%纯棉材质，舒适透气，多种颜色可选",
+      "price": 89,
+      "original_price": 129,
+      "stock": 200,
+      "sold": 356,
+      "category_id": 2,
+      "shop_id": 2,
+      "image_url": "/images/products/男士T恤.png",
+      "images": [
+        "/images/products/男士T恤.png",
+        "/images/products/男士T恤.png",
+        "/images/products/男士T恤.png"
+      ],
+      "specs": "L码, 白色, 纯棉",
+      "weight_grams": 200,
+      "dimensions_cm": {
+        "length": 30,
+        "width": 25,
+        "height": 2
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 250
+      },
+      "warranty": "",
+      "rating": 4.7,
+      "reviews": 189,
+      "is_hot": true,
+      "is_new": true,
+      "id": 3,
+      "created_at": "2025-12-10T07:12:18.908Z"
+    },
+    {
+      "name": "精品咖啡豆",
+      "sku": "COFFEE-PREMIUM",
+      "barcode": "6900000000004",
+      "brand": "精品咖啡",
+      "tags": [
+        "咖啡",
+        "食品",
+        "饮料"
+      ],
+      "attributes": {
+        "weight": [
+          "250g",
+          "500g"
+        ],
+        "roast": [
+          "中度烘焙",
+          "深度烘焙"
+        ]
+      },
+      "variants": [],
+      "description": "阿拉比卡咖啡豆，中度烘焙，香味浓郁",
+      "price": 128,
+      "original_price": 158,
+      "stock": 150,
+      "sold": 289,
+      "category_id": 3,
+      "shop_id": 3,
+      "image_url": "/images/products/咖啡豆.png",
+      "images": [
+        "/images/products/咖啡豆.png",
+        "/images/products/咖啡豆.png"
+      ],
+      "specs": "500g, 中度烘焙, 云南产地",
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 12,
+        "height": 8
+      },
+      "shipping": {
+        "type": "food",
+        "weight_grams": 520
+      },
+      "warranty": "",
+      "rating": 4.6,
+      "reviews": 167,
+      "is_hot": true,
+      "is_new": false,
+      "id": 4,
+      "created_at": "2025-12-10T07:12:18.909Z"
+    },
+    {
+      "name": "iPad Air 5",
+      "sku": "IPAD-AIR5",
+      "barcode": "6900000000005",
+      "brand": "Apple",
+      "tags": [
+        "平板",
+        "数码",
+        "学习"
+      ],
+      "attributes": {
+        "storage": [
+          "64GB",
+          "256GB"
+        ],
+        "color": [
+          "星光色",
+          "深空灰"
+        ]
+      },
+      "variants": [],
+      "description": "苹果平板电脑，M1芯片，全面屏设计，电子屏幕，支持5G",
+      "price": 4799,
+      "original_price": 5499,
+      "stock": 60,
+      "sold": 210,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/ipad.png",
+      "images": [
+        "/images/products/ipad.png",
+        "/images/products/ipad.png"
+      ],
+      "specs": "64GB, WLAN版, 星光色",
+      "weight_grams": 480,
+      "dimensions_cm": {
+        "length": 24.5,
+        "width": 17.4,
+        "height": 0.6
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 550
+      },
+      "warranty": "1年",
+      "rating": 4.7,
+      "reviews": 198,
+      "is_hot": false,
+      "is_new": true,
+      "id": 5,
+      "created_at": "2025-12-10T07:12:18.909Z"
+    },
+    {
+      "name": "运动跑步鞋",
+      "sku": "SHOES-RUNNING",
+      "barcode": "6900000000006",
+      "brand": "运动品牌",
+      "tags": [
+        "运动鞋",
+        "跑步",
+        "热销"
+      ],
+      "attributes": {
+        "size": [
+          "39",
+          "40",
+          "41",
+          "42",
+          "43"
+        ],
+        "color": [
+          "黑色",
+          "白色",
+          "红色"
+        ]
+      },
+      "variants": [],
+      "description": "轻便透气，缓震效果好，适合日常运动",
+      "price": 399,
+      "original_price": 499,
+      "stock": 120,
+      "sold": 456,
+      "category_id": 2,
+      "shop_id": 2,
+      "image_url": "/images/products/跑步鞋.png",
+      "images": [
+        "/images/products/跑步鞋.png",
+        "/images/products/跑步鞋.png",
+        "/images/products/跑步鞋.png"
+      ],
+      "specs": "42码, 黑色, 网面材质",
+      "weight_grams": 350,
+      "dimensions_cm": {
+        "length": 30,
+        "width": 11,
+        "height": 12
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 400
+      },
+      "warranty": "",
+      "rating": 4.5,
+      "reviews": 267,
+      "is_hot": true,
+      "is_new": false,
+      "id": 6,
+      "created_at": "2025-12-10T07:12:18.910Z"
+    },
+    {
+      "name": "无线蓝牙耳机",
+      "sku": "EARBUDS-BT",
+      "barcode": "6900000000007",
+      "brand": "音频品牌",
+      "tags": [
+        "耳机",
+        "蓝牙",
+        "降噪"
+      ],
+      "attributes": {
+        "color": [
+          "黑色",
+          "白色",
+          "银色"
+        ]
+      },
+      "variants": [],
+      "description": "主动降噪，续航30小时，Hi-Fi音质",
+      "price": 699,
+      "original_price": 899,
+      "stock": 180,
+      "sold": 523,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/耳机.png",
+      "images": [
+        "/images/products/耳机.png",
+        "/images/products/耳机.png"
+      ],
+      "specs": "黑色, 支持降噪, 无线充电",
+      "weight_grams": 65,
+      "dimensions_cm": {
+        "length": 6,
+        "width": 2.5,
+        "height": 2.5
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 150
+      },
+      "warranty": "1年",
+      "rating": 4.8,
+      "reviews": 421,
+      "is_hot": true,
+      "is_new": false,
+      "id": 7,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "游戏机械键盘",
+      "sku": "KEYBOARD-MECH",
+      "barcode": "6900000000008",
+      "brand": "游戏外设品牌",
+      "tags": [
+        "键盘",
+        "机械",
+        "RGB"
+      ],
+      "attributes": {
+        "switch": [
+          "青轴",
+          "红轴"
+        ],
+        "color": [
+          "黑色"
+        ]
+      },
+      "variants": [],
+      "description": "RGB背光，青轴，全键无冲",
+      "price": 499,
+      "original_price": 699,
+      "stock": 95,
+      "sold": 312,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/键盘.png",
+      "images": [
+        "/images/products/键盘.png",
+        "/images/products/键盘.png"
+      ],
+      "specs": "黑色, 青轴, RGB背光",
+      "weight_grams": 950,
+      "dimensions_cm": {
+        "length": 45,
+        "width": 13.5,
+        "height": 3
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 1100
+      },
+      "warranty": "2年",
+      "rating": 4.6,
+      "reviews": 189,
+      "is_hot": false,
+      "is_new": true,
+      "id": 8,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "智能手表",
+      "sku": "SMARTWATCH",
+      "barcode": "6900000000009",
+      "brand": "科技品牌",
+      "tags": [
+        "手表",
+        "智能",
+        "健康"
+      ],
+      "attributes": {
+        "size": [
+          "42mm",
+          "46mm"
+        ],
+        "color": [
+          "黑色",
+          "银色"
+        ]
+      },
+      "variants": [],
+      "description": "健康监测，运动模式，NFC支付",
+      "price": 1299,
+      "original_price": 1599,
+      "stock": 75,
+      "sold": 234,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/手表.png",
+      "images": [
+        "/images/products/手表.png",
+        "/images/products/手表.png"
+      ],
+      "specs": "黑色, 46mm, 心率监测",
+      "weight_grams": 42,
+      "dimensions_cm": {
+        "length": 4.5,
+        "width": 4.5,
+        "height": 1.2
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 120
+      },
+      "rating": 4.7,
+      "reviews": 156,
+      "is_hot": true,
+      "is_new": true,
+      "id": 9,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "男士休闲裤",
+      "sku": "PANTS-CASUAL",
+      "barcode": "6900000000010",
+      "brand": "服装品牌",
+      "tags": [
+        "裤子",
+        "休闲",
+        "棉质"
+      ],
+      "attributes": {
+        "size": [
+          "30",
+          "32",
+          "34",
+          "36"
+        ],
+        "color": [
+          "卡其色",
+          "黑色",
+          "灰色"
+        ]
+      },
+      "variants": [],
+      "description": "舒适棉质，修身版型，多色可选",
+      "price": 199,
+      "original_price": 299,
+      "stock": 150,
+      "sold": 423,
+      "category_id": 2,
+      "shop_id": 2,
+      "image_url": "/images/products/男裤.png",
+      "images": [
+        "/images/products/男裤.png",
+        "/images/products/男裤.png"
+      ],
+      "specs": "32码, 卡其色, 棉质",
+      "weight_grams": 450,
+      "dimensions_cm": {
+        "length": 100,
+        "width": 40,
+        "height": 15
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 500
+      },
+      "warranty": "",
+      "rating": 4.4,
+      "reviews": 178,
+      "is_hot": false,
+      "is_new": false,
+      "id": 10,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "女士连衣裙",
+      "sku": "DRESS-WOMEN",
+      "barcode": "6900000000011",
+      "brand": "时尚品牌",
+      "tags": [
+        "裙子",
+        "夏季",
+        "雪纺"
+      ],
+      "attributes": {
+        "size": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "pattern": [
+          "碎花",
+          "纯色"
+        ]
+      },
+      "variants": [],
+      "description": "夏季新款，雪纺材质，优雅时尚",
+      "price": 299,
+      "original_price": 399,
+      "stock": 120,
+      "sold": 289,
+      "category_id": 2,
+      "shop_id": 2,
+      "image_url": "/images/products/女裙.png",
+      "images": [
+        "/images/products/女裙.png",
+        "/images/products/女裙.png"
+      ],
+      "specs": "M码, 碎花, 雪纺",
+      "weight_grams": 250,
+      "dimensions_cm": {
+        "length": 100,
+        "width": 35,
+        "height": 5
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 300
+      },
+      "warranty": "",
+      "rating": 4.8,
+      "reviews": 145,
+      "is_hot": true,
+      "is_new": true,
+      "id": 11,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "男士夹克",
+      "sku": "JACKET-MEN",
+      "barcode": "6900000000012",
+      "brand": "服装品牌",
+      "tags": [
+        "夹克",
+        "秋季",
+        "防风"
+      ],
+      "attributes": {
+        "size": [
+          "M",
+          "L",
+          "XL",
+          "XXL"
+        ],
+        "color": [
+          "黑色",
+          "蓝色"
+        ]
+      },
+      "variants": [],
+      "description": "秋季新款，防风保暖，简约设计",
+      "price": 459,
+      "original_price": 599,
+      "stock": 80,
+      "sold": 156,
+      "category_id": 2,
+      "shop_id": 2,
+      "image_url": "/images/products/男夹克.png",
+      "images": [
+        "/images/products/男夹克.png",
+        "/images/products/男夹克.png"
+      ],
+      "specs": "L码, 黑色, 防风面料",
+      "weight_grams": 600,
+      "dimensions_cm": {
+        "length": 65,
+        "width": 50,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 700
+      },
+      "warranty": "",
+      "rating": 4.5,
+      "reviews": 89,
+      "is_hot": false,
+      "is_new": true,
+      "id": 12,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "进口巧克力礼盒",
+      "sku": "CHOCOLATE-GIFT",
+      "barcode": "6900000000013",
+      "brand": "比利时巧克力",
+      "tags": [
+        "巧克力",
+        "礼盒",
+        "食品"
+      ],
+      "attributes": {
+        "flavor": [
+          "混合",
+          "黑巧克力",
+          "牛奶巧克力"
+        ]
+      },
+      "variants": [],
+      "description": "比利时进口巧克力，精美礼盒装",
+      "price": 158,
+      "original_price": 198,
+      "stock": 200,
+      "sold": 567,
+      "category_id": 3,
+      "shop_id": 3,
+      "image_url": "/images/products/巧克力.png",
+      "images": [
+        "/images/products/巧克力.png",
+        "/images/products/巧克力.png"
+      ],
+      "specs": "500g, 混合口味, 礼盒装",
+      "weight_grams": 530,
+      "dimensions_cm": {
+        "length": 22,
+        "width": 15,
+        "height": 8
+      },
+      "shipping": {
+        "type": "food",
+        "weight_grams": 560
+      },
+      "warranty": "",
+      "rating": 4.9,
+      "reviews": 345,
+      "is_hot": true,
+      "is_new": false,
+      "id": 13,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "有机茶叶礼盒",
+      "sku": "TEA-ORGANIC",
+      "barcode": "6900000000014",
+      "brand": "高山茶叶",
+      "tags": [
+        "茶叶",
+        "有机",
+        "礼盒"
+      ],
+      "attributes": {
+        "type": [
+          "绿茶",
+          "乌龙茶"
+        ],
+        "weight": [
+          "250g",
+          "500g"
+        ]
+      },
+      "variants": [],
+      "description": "高山有机茶叶，清香回甘",
+      "price": 288,
+      "original_price": 388,
+      "stock": 100,
+      "sold": 234,
+      "category_id": 3,
+      "shop_id": 3,
+      "image_url": "/images/products/茶叶.png",
+      "images": [
+        "/images/products/茶叶.png",
+        "/images/products/茶叶.png"
+      ],
+      "specs": "250g, 绿茶, 礼盒装",
+      "weight_grams": 280,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "food",
+        "weight_grams": 320
+      },
+      "warranty": "",
+      "rating": 4.7,
+      "reviews": 167,
+      "is_hot": false,
+      "is_new": true,
+      "id": 14,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "坚果大礼包",
+      "sku": "NUTS-GIFT",
+      "barcode": "6900000000015",
+      "brand": "坚果食品",
+      "tags": [
+        "坚果",
+        "健康",
+        "热销"
+      ],
+      "attributes": {
+        "type": [
+          "混合",
+          "杏仁",
+          "腰果"
+        ]
+      },
+      "variants": [],
+      "description": "多种坚果混合，健康营养",
+      "price": 98,
+      "original_price": 128,
+      "stock": 300,
+      "sold": 678,
+      "category_id": 3,
+      "shop_id": 3,
+      "image_url": "/images/products/坚果礼包.png",
+      "images": [
+        "/images/products/坚果礼包.png",
+        "/images/products/坚果礼包.png"
+      ],
+      "specs": "1000g, 混合坚果, 独立包装",
+      "weight_grams": 1010,
+      "dimensions_cm": {
+        "length": 25,
+        "width": 18,
+        "height": 8
+      },
+      "shipping": {
+        "type": "food",
+        "weight_grams": 1050
+      },
+      "warranty": "",
+      "rating": 4.6,
+      "reviews": 289,
+      "is_hot": true,
+      "is_new": false,
+      "id": 15,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "编程技术书籍",
+      "sku": "BOOK-PROG",
+      "barcode": "6900000000016",
+      "brand": "轻师出版",
+      "tags": [
+        "编程",
+        "技术",
+        "文学"
+      ],
+      "attributes": {
+        "edition": [
+          "第4版",
+          "第5版",
+          "第6版"
+        ],
+        "language": [
+          "中文",
+          "英文"
+        ],
+        "format": [
+          "精装",
+          "平装"
+        ]
+      },
+      "variants": [],
+      "description": "JavaScript高级程序设计，前端开发必备",
+      "price": 89,
+      "original_price": 108,
+      "stock": 150,
+      "sold": 456,
+      "category_id": 4,
+      "shop_id": 1,
+      "image_url": "/images/products/编程书籍.png",
+      "images": [
+        "/images/products/编程书籍.png",
+        "/images/products/编程书籍.png"
+      ],
+      "specs": "第4版, 中文版, 精装",
+      "weight_grams": 850,
+      "dimensions_cm": {
+        "length": 24,
+        "width": 17,
+        "height": 3
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 900
+      },
+      "warranty": "",
+      "rating": 4.9,
+      "reviews": 267,
+      "is_hot": true,
+      "is_new": false,
+      "id": 16,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "商务笔记本套装",
+      "description": "高档皮质笔记本+钢笔套装",
+      "price": 299,
+      "original_price": 399,
+      "stock": 80,
+      "sold": 156,
+      "category_id": 4,
+      "shop_id": 1,
+      "image_url": "/images/products/笔记本.png",
+      "images": [
+        "/images/products/笔记本.png",
+        "/images/products/笔记本.png"
+      ],
+      "specs": "A5尺寸, 皮质封面, 含钢笔",
+      "rating": 4.7,
+      "reviews": 89,
+      "is_hot": false,
+      "is_new": true,
+      "id": 17,
+      "created_at": "2025-12-10T07:20:00.000Z"
+    },
+    {
+      "name": "电动牙刷",
+      "sku": "TOOTHBRUSH-ELEC",
+      "barcode": "6900000000018",
+      "brand": "口腔护理品牌",
+      "tags": [
+        "牙刷",
+        "健康",
+        "家电"
+      ],
+      "attributes": {
+        "color": [
+          "白色",
+          "黑色",
+          "蓝色",
+          "紫色"
+        ],
+        "mode": [
+          "3种模式",
+          "5种模式"
+        ],
+        "size": [
+          "小",
+          "中",
+          "大"
+        ],
+        "type": [
+          "buddy",
+          "pro",
+          "max"
+        ],
+        "warranty": [
+          "一年",
+          "三年"
+        ]
+      },
+      "variants": [],
+      "description": "想告别手动刷牙的清洁死角，轻松拥有牙医级的口腔护理体验吗？这款智感声波电动牙刷绝对是你的不二之选！不管你是牙龈敏感星人、正畸党，还是追求高效清洁的上班族，它都能精准适配需求!",
+      "price": 299,
+      "original_price": 399,
+      "stock": 180,
+      "sold": 423,
+      "category_id": 5,
+      "shop_id": 1,
+      "image_url": "/images/products/电动牙刷.png",
+      "images": [
+        "/images/products/电动牙刷2.png",
+        "/images/products/电动牙刷1.png",
+        "/images/products/电动牙刷3.png"
+      ],
+      "videos": [
+        {
+          "src": "/images/products/video/电动牙刷.mp4",
+          "thumb": "/images/products/电动牙刷1.png"
+        }
+      ],
+      "specs": "白色, 3种模式, 无线充电",
+      "weight_grams": 180,
+      "dimensions_cm": {
+        "length": 24,
+        "width": 2.5,
+        "height": 2.5
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 250
+      },
+      "warranty": "1年",
+      "rating": 4.6,
+      "reviews": 234,
+      "is_hot": true,
+      "is_new": false,
+      "id": 18,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    },
+    {
+      "name": "加湿器",
+      "sku": "HUMIDIFIER",
+      "barcode": "6900000000019",
+      "brand": "幻想家電",
+      "tags": [
+        "加湿器",
+        "回潮",
+        "家电"
+      ],
+      "attributes": {
+        "capacity": [
+          "4L",
+          "6L"
+        ],
+        "color": [
+          "白色"
+        ]
+      },
+      "variants": [],
+      "description": "静音加湿，大容量，智能恒湿",
+      "price": 199,
+      "original_price": 299,
+      "stock": 120,
+      "sold": 289,
+      "category_id": 5,
+      "shop_id": 1,
+      "image_url": "/images/products/加湿器.png",
+      "images": [
+        "https://picsum.photos/600/400?random=4019-1",
+        "https://picsum.photos/600/400?random=4019-2"
+      ],
+      "specs": "4L容量, 静音设计, 遥控控制",
+      "weight_grams": 850,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 20,
+        "height": 25
+      },
+      "shipping": {
+        "type": "bulky",
+        "weight_grams": 1000
+      },
+      "warranty": "1年",
+      "rating": 4.5,
+      "reviews": 167,
+      "is_hot": false,
+      "is_new": true,
+      "id": 19,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    },
+    {
+      "name": "瑜伽垫",
+      "sku": "YOGA-MAT",
+      "barcode": "6900000000020",
+      "brand": "矩动品牌",
+      "tags": [
+        "瑜伽",
+        "运动",
+        "客厅"
+      ],
+      "attributes": {
+        "thickness": [
+          "10mm",
+          "15mm"
+        ],
+        "color": [
+          "紫色",
+          "黑色",
+          "蓝色"
+        ]
+      },
+      "variants": [],
+      "description": "加厚防滑，环保材质，多种颜色",
+      "price": 89,
+      "original_price": 129,
+      "stock": 200,
+      "sold": 356,
+      "category_id": 6,
+      "shop_id": 1,
+      "image_url": "/images/products/瑜伽垫.png",
+      "images": [
+        "/images/products/瑜伽垫.png",
+        "/images/products/瑜伽垫.png"
+      ],
+      "specs": "10mm厚度, 紫色, 环保材质",
+      "weight_grams": 600,
+      "dimensions_cm": {
+        "length": 180,
+        "width": 60,
+        "height": 1
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 700
+      },
+      "warranty": "",
+      "rating": 4.7,
+      "reviews": 189,
+      "is_hot": true,
+      "is_new": false,
+      "id": 20,
+      "created_at": "2025-12-10T09:00:00.000Z"
+    },
+    {
+      "name": "智能体脂秤",
+      "description": "13项身体数据测量，APP连接",
+      "price": 159,
+      "original_price": 199,
+      "stock": 150,
+      "sold": 267,
+      "category_id": 6,
+      "shop_id": 1,
+      "image_url": "/images/products/体脂秤.png",
+      "images": [
+        "https://picsum.photos/600/400?random=4021-1",
+        "https://picsum.photos/600/400?random=4021-2"
+      ],
+      "specs": "白色, 蓝牙连接, 13项数据",
+      "rating": 4.6,
+      "reviews": 145,
+      "is_hot": false,
+      "is_new": true,
+      "id": 21,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "SCALE-BODY",
+      "barcode": "6900000000021",
+      "brand": "智能设备品牌",
+      "tags": [
+        "体脂秤",
+        "健康",
+        "数据"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "便携榨汁机",
+      "description": "无线便携，一键操作，易清洗",
+      "price": 179,
+      "original_price": 229,
+      "stock": 130,
+      "sold": 289,
+      "category_id": 5,
+      "shop_id": 1,
+      "image_url": "/images/products/榨汁机.png",
+      "images": [
+        "https://picsum.photos/600/400?random=4022-1",
+        "https://picsum.photos/600/400?random=4022-2"
+      ],
+      "specs": "粉色, 无线便携, 400ml容量",
+      "rating": 4.5,
+      "reviews": 123,
+      "is_hot": true,
+      "is_new": false,
+      "id": 22,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "JUICER-PORT",
+      "barcode": "6900000000022",
+      "brand": "小家电品牌",
+      "tags": [
+        "榨汁机",
+        "健康",
+        "便携"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "电竞显示器",
+      "description": "27寸2K显示器，144Hz刷新率",
+      "price": 1999,
+      "original_price": 2499,
+      "stock": 60,
+      "sold": 89,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/显示器.png",
+      "images": [
+        "/images/products/显示器.png",
+        "/images/products/显示器.png"
+      ],
+      "specs": "27寸, 2K分辨率, 144Hz",
+      "rating": 4.8,
+      "reviews": 67,
+      "is_hot": true,
+      "is_new": true,
+      "id": 23,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "MONITOR-GAMING",
+      "barcode": "6900000000023",
+      "brand": "显示器品牌",
+      "tags": [
+        "显示器",
+        "游戏",
+        "电竞"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "游戏笔记本",
+      "description": "RTX 4060显卡，i7处理器，16GB内存",
+      "price": 8999,
+      "original_price": 9999,
+      "stock": 40,
+      "sold": 56,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/游戏本.png",
+      "images": [
+        "https://picsum.photos/600/400?random=4024-1",
+        "https://picsum.photos/600/400?random=4024-2"
+      ],
+      "specs": "i7-13700H, RTX4060, 16GB",
+      "rating": 4.7,
+      "reviews": 45,
+      "is_hot": false,
+      "is_new": true,
+      "id": 24,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "LAPTOP-GAMING",
+      "barcode": "6900000000024",
+      "brand": "笔记本品牌",
+      "tags": [
+        "笔记本",
+        "游戏",
+        "性能"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "无线鼠标",
+      "description": "静音设计，精准追踪，长续航",
+      "price": 79,
+      "original_price": 99,
+      "stock": 300,
+      "sold": 456,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/鼠标.png",
+      "images": [
+        "https://picsum.photos/600/400?random=4025-1",
+        "https://picsum.photos/600/400?random=4025-2"
+      ],
+      "specs": "黑色, 静音设计, 无线",
+      "rating": 4.4,
+      "reviews": 234,
+      "is_hot": true,
+      "is_new": false,
+      "id": 25,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "MOUSE-WIRELESS",
+      "barcode": "6900000000025",
+      "brand": "外设品牌",
+      "tags": [
+        "鼠标",
+        "无线",
+        "静音"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "移动电源",
+      "description": "20000mAh大容量，快充支持",
+      "price": 129,
+      "original_price": 169,
+      "stock": 180,
+      "sold": 345,
+      "category_id": 1,
+      "shop_id": 1,
+      "image_url": "/images/products/电源.png",
+      "images": [
+        "/images/products/电源.png",
+        "/images/products/电源.png"
+      ],
+      "specs": "20000mAh, 22.5W快充, 白色",
+      "rating": 4.6,
+      "reviews": 189,
+      "is_hot": true,
+      "is_new": false,
+      "id": 26,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "POWERBANK",
+      "barcode": "6900000000026",
+      "brand": "充电品牌",
+      "tags": [
+        "电源",
+        "充电",
+        "便携"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "男士西装",
+      "description": "商务正装，修身剪裁，高档面料",
+      "price": 1299,
+      "original_price": 1699,
+      "stock": 50,
+      "sold": 78,
+      "category_id": 2,
+      "shop_id": 2,
+      "image_url": "/images/products/男士西装.png",
+      "images": [
+        "/images/products/男士西装.png",
+        "/images/products/男士西装.png"
+      ],
+      "specs": "深蓝色, 修身款, 含西裤",
+      "rating": 4.8,
+      "reviews": 56,
+      "is_hot": false,
+      "is_new": true,
+      "id": 27,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "SUIT-MENS",
+      "barcode": "6900000000027",
+      "brand": "正装品牌",
+      "tags": [
+        "西装",
+        "商务",
+        "正装"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "女士高跟鞋",
+      "description": "细跟设计，舒适内里，多色可选",
+      "price": 399,
+      "original_price": 499,
+      "stock": 120,
+      "sold": 189,
+      "category_id": 2,
+      "shop_id": 2,
+      "image_url": "/images/products/高跟鞋.png",
+      "images": [
+        "/images/products/高跟鞋.png",
+        "/images/products/高跟鞋.png"
+      ],
+      "specs": "黑色, 8cm跟高, 37码",
+      "rating": 4.5,
+      "reviews": 89,
+      "is_hot": true,
+      "is_new": false,
+      "id": 28,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "HEELS-WOMENS",
+      "barcode": "6900000000028",
+      "brand": "鞋类品牌",
+      "tags": [
+        "高跟鞋",
+        "女士",
+        "时尚"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "儿童书包",
+      "description": "护脊设计，防水面料，多隔层",
+      "price": 199,
+      "original_price": 259,
+      "stock": 150,
+      "sold": 234,
+      "category_id": 2,
+      "shop_id": 2,
+      "image_url": "/images/products/儿童书包.png",
+      "images": [
+        "/images/products/儿童书包.png",
+        "/images/products/儿童书包.png"
+      ],
+      "specs": "蓝色, 护脊设计, 小学生适用",
+      "rating": 4.7,
+      "reviews": 123,
+      "is_hot": false,
+      "is_new": true,
+      "id": 29,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "BACKPACK-KIDS",
+      "barcode": "6900000000029",
+      "brand": "儿童品牌",
+      "tags": [
+        "书包",
+        "儿童",
+        "护脊"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "进口红酒",
+      "description": "法国波尔多产区，干红葡萄酒",
+      "price": 299,
+      "original_price": 399,
+      "stock": 100,
+      "sold": 156,
+      "category_id": 3,
+      "shop_id": 3,
+      "image_url": "/images/products/进口红酒.png",
+      "images": [
+        "/images/products/进口红酒.png",
+        "/images/products/进口红酒.png"
+      ],
+      "specs": "750ml, 干红, 法国进口",
+      "rating": 4.8,
+      "reviews": 89,
+      "is_hot": true,
+      "is_new": true,
+      "id": 30,
+      "created_at": "2025-12-10T09:00:00.000Z",
+      "sku": "WINE-RED",
+      "barcode": "6900000000030",
+      "brand": "葡萄酒品牌",
+      "tags": [
+        "红酒",
+        "进口",
+        "饮品"
+      ],
+      "attributes": {},
+      "variants": [],
+      "weight_grams": 500,
+      "dimensions_cm": {
+        "length": 20,
+        "width": 15,
+        "height": 10
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 600
+      },
+      "warranty": ""
+    },
+    {
+      "name": "男士休闲衬衫",
+      "sku": "MEN-SHIRT",
+      "barcode": "6900000000011",
+      "brand": "优衣库",
+      "tags": [
+        "衬衫",
+        "男士",
+        "休闲",
+        "商务"
+      ],
+      "attributes": {
+        "size": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "color": [
+          "白色",
+          "浅蓝",
+          "灰色",
+          "条纹"
+        ],
+        "material": [
+          "纯棉",
+          "涤棉"
+        ]
+      },
+      "variants": [
+        {
+          "sku": "MEN-SHIRT-WHITE-M",
+          "attributes": {
+            "size": "M",
+            "color": "白色",
+            "material": "纯棉"
+          },
+          "price": 129,
+          "stock": 85
+        }
+      ],
+      "description": "男士休闲衬衫，舒适纯棉面料，适合商务休闲场合",
+      "price": 129,
+      "original_price": 169,
+      "stock": 320,
+      "sold": 1250,
+      "category_id": 3,
+      "shop_id": 3,
+      "image_url": "/images/products/男士衬衫.png",
+      "images": [
+        "/images/products/男士衬衫.png",
+        "/images/products/男士衬衫-2.png",
+        "/images/products/男士衬衫-3.png"
+      ],
+      "specs": "100%纯棉, 可机洗, 免烫处理",
+      "weight_grams": 280,
+      "dimensions_cm": {
+        "length": 75,
+        "width": 60,
+        "height": 1
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 300
+      },
+      "rating": 4.8,
+      "reviews": 567,
+      "is_hot": true,
+      "is_new": false,
+      "id": 31,
+      "created_at": "2025-10-20T10:15:00.000Z"
+    },
+    {
+      "name": "甜美泡泡袖连衣裙",
+      "sku": "DRESS-BUBBLE",
+      "barcode": "6900000000031",
+      "brand": "甜蜜衣橱",
+      "tags": [
+        "连衣裙",
+        "甜美",
+        "泡泡袖"
+      ],
+      "attributes": {
+        "size": [
+          "S",
+          "M",
+          "L"
+        ],
+        "color": [
+          "粉色",
+          "白色",
+          "浅蓝色"
+        ]
+      },
+      "variants": [],
+      "description": "清新甜美的泡泡袖设计，展现优雅气质，适合约会和日常穿搭",
+      "price": 189,
+      "original_price": 259,
+      "stock": 45,
+      "sold": 123,
+      "category_id": 2,
+      "shop_id": 2,
+      "image_url": "/images/products/泡泡袖连衣裙.png",
+      "images": [
+        "/images/products/泡泡袖连衣裙.png",
+        "/images/products/泡泡袖连衣裙2.png"
+      ],
+      "specs": "M码, 粉色, 雪纺面料",
+      "weight_grams": 280,
+      "dimensions_cm": {
+        "length": 100,
+        "width": 35,
+        "height": 5
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 320
+      },
+      "warranty": "",
+      "rating": 4.8,
+      "reviews": 89,
+      "is_hot": true,
+      "is_new": true,
+      "shop_category": "连衣裙",
+      "id": 32,
+      "created_at": "2025-12-10T16:50:00.000Z"
+    },
+    {
+      "name": "运动健身套装",
+      "sku": "SPORTSWEAR-SET",
+      "barcode": "6900000000036",
+      "brand": "运动专营",
+      "tags": [
+        "运动套装",
+        "健身",
+        "速干"
+      ],
+      "attributes": {
+        "size": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ],
+        "color": [
+          "黑色",
+          "灰色",
+          "粉色"
+        ]
+      },
+      "variants": [],
+      "description": "专业运动面料，速干透气，适合各种运动场景",
+      "price": 299,
+      "original_price": 399,
+      "stock": 120,
+      "sold": 234,
+      "category_id": 6,
+      "shop_id": 5,
+      "image_url": "/images/products/运动套装.png",
+      "images": [
+        "/images/products/运动套装.png",
+        "/images/products/运动套装.png"
+      ],
+      "specs": "M码, 黑色, 速干面料",
+      "weight_grams": 400,
+      "dimensions_cm": {
+        "length": 70,
+        "width": 50,
+        "height": 8
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 450
+      },
+      "warranty": "",
+      "rating": 4.6,
+      "reviews": 178,
+      "is_hot": true,
+      "is_new": true,
+      "shop_category": "锻炼服装",
+      "id": 33,
+      "created_at": "2025-12-10T10:30:00.000Z"
+    },
+    {
+      "name": "儿童绘本套装",
+      "sku": "BOOKS-KIDS",
+      "barcode": "6900000000038",
+      "brand": "书香文具",
+      "tags": [
+        "绘本",
+        "儿童",
+        "教育"
+      ],
+      "attributes": {
+        "age": [
+          "3-6岁",
+          "6-9岁"
+        ],
+        "language": [
+          "中文",
+          "双语"
+        ]
+      },
+      "variants": [],
+      "description": "精美插画，寓教于乐，培养孩子阅读兴趣",
+      "price": 128,
+      "original_price": 168,
+      "stock": 100,
+      "sold": 289,
+      "category_id": 4,
+      "shop_id": 4,
+      "image_url": "/images/products/儿童绘本.png",
+      "images": [
+        "/images/products/儿童绘本.png",
+        "/images/products/儿童绘本.png"
+      ],
+      "specs": "3-6岁, 中文版, 10册装",
+      "weight_grams": 800,
+      "dimensions_cm": {
+        "length": 25,
+        "width": 20,
+        "height": 15
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 900
+      },
+      "warranty": "",
+      "rating": 4.8,
+      "reviews": 234,
+      "is_hot": true,
+      "is_new": true,
+      "shop_category": "儿童读物",
+      "id": 34,
+      "created_at": "2025-12-10T12:30:00.000Z"
+    },
+    {
+      "name": "可调节哑铃套装",
+      "sku": "DUMBBELL-SET",
+      "barcode": "6900000000039",
+      "brand": "运动专营",
+      "tags": [
+        "哑铃",
+        "健身",
+        "力量训练"
+      ],
+      "attributes": {
+        "weight": [
+          "10kg",
+          "20kg",
+          "30kg"
+        ],
+        "material": [
+          "铸铁",
+          "橡胶包胶"
+        ]
+      },
+      "variants": [],
+      "description": "专业可调节哑铃套装，适合家庭健身和力量训练",
+      "price": 299,
+      "original_price": 399,
+      "stock": 50,
+      "sold": 89,
+      "category_id": 6,
+      "shop_id": 5,
+      "image_url": "/images/products/哑铃套装.png",
+      "images": [
+        "/images/products/哑铃套装.png",
+        "/images/products/哑铃套装.png"
+      ],
+      "specs": "20kg, 橡胶包胶, 可调节",
+      "weight_grams": 20000,
+      "dimensions_cm": {
+        "length": 40,
+        "width": 20,
+        "height": 20
+      },
+      "shipping": {
+        "type": "bulky",
+        "weight_grams": 20500
+      },
+      "warranty": "1年",
+      "rating": 4.7,
+      "reviews": 156,
+      "is_hot": true,
+      "is_new": false,
+      "shop_category": "锻炼器材",
+      "id": 35,
+      "created_at": "2025-12-11T10:00:00.000Z"
+    },
+    {
+      "name": "乳清蛋白粉",
+      "sku": "PROTEIN-WHEY",
+      "barcode": "6900000000040",
+      "brand": "运动专营",
+      "tags": [
+        "蛋白粉",
+        "营养补充",
+        "健身"
+      ],
+      "attributes": {
+        "flavor": [
+          "香草味",
+          "巧克力味",
+          "草莓味"
+        ],
+        "weight": [
+          "1kg",
+          "2.5kg",
+          "5kg"
+        ]
+      },
+      "variants": [],
+      "description": "高品质乳清蛋白粉，快速补充蛋白质，助力肌肉增长",
+      "price": 199,
+      "original_price": 259,
+      "stock": 80,
+      "sold": 234,
+      "category_id": 6,
+      "shop_id": 5,
+      "image_url": "/images/products/蛋白粉.png",
+      "images": [
+        "/images/products/蛋白粉.png",
+        "/images/products/蛋白粉.png"
+      ],
+      "specs": "2.5kg, 香草味, 乳清蛋白",
+      "weight_grams": 2500,
+      "dimensions_cm": {
+        "length": 25,
+        "width": 25,
+        "height": 30
+      },
+      "shipping": {
+        "type": "standard",
+        "weight_grams": 2600
+      },
+      "warranty": "",
+      "rating": 4.6,
+      "reviews": 189,
+      "is_hot": true,
+      "is_new": true,
+      "shop_category": "营养补充",
+      "id": 36,
+      "created_at": "2025-12-11T10:30:00.000Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "product_id": 18,
+      "user_id": 2,
+      "order_id": 101,
+      "rating": 5,
+      "title": "非常满意！",
+      "content": "这款牙刷的声波振动技术真的很给力！我之前的牙刷刷完总觉得牙缝不干净，这个用了一周，牙龈明显更健康了。最喜欢它的智能计时功能，每30秒提醒换区，刷牙变得有仪式感了。续航也强，充一次电能用将近一个月。适合我这种经常出差的人。",
+      "images": [
+        "/images/products/电动牙刷2.png",
+        "/images/products/电动牙刷1.png"
+      ],
+      "is_anonymous": false,
+      "has_media": true,
+      "likes": 24,
+      "is_verified_purchase": true,
+      "created_at": "2025-12-05T14:30:00.000Z",
+      "updated_at": "2025-12-05T14:30:00.000Z"
+    },
+    {
+      "id": 2,
+      "product_id": 18,
+      "user_id": 1,
+      "order_id": 105,
+      "rating": 4,
+      "title": "还不错，但有点小贵",
+      "content": "给孩子买的，他以前总是不爱刷牙。这款有可爱贴纸和APP互动游戏，现在每天主动去刷牙！刷头很软，适合儿童牙龈。续航也不错，不用老充电。就是希望多出几种卡通主题刷头。",
+      "images": [],
+      "is_anonymous": true,
+      "has_media": false,
+      "likes": 8,
+      "is_verified_purchase": true,
+      "created_at": "2025-12-08T10:15:00.000Z",
+      "updated_at": "2025-12-08T10:15:00.000Z"
+    },
+    {
+      "id": 3,
+      "product_id": 18,
+      "user_id": 2,
+      "order_id": 102,
+      "rating": 5,
+      "title": "还不错",
+      "content": "清洁模式很全，包括敏感模式和牙龈按摩模式。我戴牙套，用敏感模式很舒服，刷得也干净。",
+      "images": [
+        "/images/products/电动牙刷3.png"
+      ],
+      "is_anonymous": false,
+      "has_media": true,
+      "likes": 15,
+      "is_verified_purchase": true,
+      "created_at": "2025-12-03T16:45:00.000Z",
+      "updated_at": "2025-12-03T16:45:00.000Z"
+    },
+    {
+      "id": 4,
+      "product_id": 18,
+      "user_id": 2,
+      "order_id": 102,
+      "rating": 5,
+      "title": "这个价位能有这么多功能真的超值！",
+      "content": "我同时买了另一款国际品牌的，对比下来这个的清洁力不输，续航还更长。赠送了4个刷头，够用一年了。适合学生党和刚工作的人。",
+      "images": [
+        "/images/products/电动牙刷1.png"
+      ],
+      "is_anonymous": false,
+      "has_media": true,
+      "likes": 15,
+      "is_verified_purchase": true,
+      "created_at": "2025-12-03T16:45:00.000Z",
+      "updated_at": "2025-12-03T16:45:00.000Z"
+    },
+    {
+      "id": 5,
+      "product_id": 18,
+      "user_id": 2,
+      "order_id": 102,
+      "rating": 5,
+      "title": "一般",
+      "content": "也就还好，就普通电动牙刷的水平，没有特别惊艳的地方。",
+      "is_anonymous": false,
+      "has_media": true,
+      "likes": 15,
+      "is_verified_purchase": true,
+      "created_at": "2025-12-03T16:45:00.000Z",
+      "updated_at": "2025-12-03T16:45:00.000Z"
+    },
+    {
+      "id": 6,
+      "product_id": 18,
+      "user_id": 2,
+      "order_id": 102,
+      "rating": 5,
+      "title": "还行",
+      "content": "要是能有更多颜色选择就好了。",
+      "images": [
+        "/images/products/电动牙刷2.png"
+      ],
+      "is_anonymous": false,
+      "has_media": true,
+      "likes": 15,
+      "is_verified_purchase": true,
+      "created_at": "2025-12-03T16:45:00.000Z",
+      "updated_at": "2025-12-03T16:45:00.000Z"
+    },
+    {
+      "id": 7,
+      "product_id": 18,
+      "user_id": 2,
+      "order_id": 102,
+      "rating": 5,
+      "title": "用下来挺满意的",
+      "content": "第一次用电动牙刷，比手动刷得干净太多！牙齿表面明显更光滑。有新手引导模式，很贴心。就是刚开始振动有点不习惯，用了两天就适应了。建议新手可以从最低档开始。",
+      "images": [
+        "/images/products/电动牙刷3.png"
+      ],
+      "is_anonymous": false,
+      "has_media": true,
+      "likes": 15,
+      "is_verified_purchase": true,
+      "created_at": "2025-12-03T16:45:00.000Z",
+      "updated_at": "2025-12-03T16:45:00.000Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 101,
+      "order_number": "ORD20251205001",
+      "user_id": 1,
+      "total_amount": 8999,
+      "status": "completed",
+      "payment_method": "alipay",
+      "created_at": "2025-12-01T10:30:00.000Z",
+      "completed_at": "2025-12-05T14:00:00.000Z"
+    },
+    {
+      "id": 102,
+      "order_number": "ORD20251211001",
+      "user_id": 1,
+      "total_amount": 388,
+      "status": "pending_payment",
+      "payment_method": null,
+      "created_at": "2025-12-11T14:30:00.000Z",
+      "expire_at": "2025-12-11T15:00:00.000Z"
+    },
+    {
+      "id": 103,
+      "order_number": "ORD20251210002",
+      "user_id": 1,
+      "total_amount": 234.5,
+      "status": "shipped",
+      "payment_method": "wechat",
+      "created_at": "2025-12-10T09:15:00.000Z",
+      "shipped_at": "2025-12-10T16:20:00.000Z"
+    },
+    {
+      "id": 104,
+      "order_number": "ORD20251209003",
+      "user_id": 1,
+      "total_amount": 578,
+      "status": "completed",
+      "payment_method": "alipay",
+      "created_at": "2025-12-09T11:45:00.000Z",
+      "completed_at": "2025-12-11T10:30:00.000Z"
+    },
+    {
+      "order_number": "20251212152159428",
+      "user_id": 1,
+      "status": "pending_payment",
+      "total_amount": 189,
+      "payment_method": "alipay",
+      "address_id": "1",
+      "created_at": "2025-12-12T07:21:59.704Z",
+      "expire_at": "2025-12-12T07:51:59.704Z",
+      "id": 4
+    },
+    {
+      "order_number": "20251212152436220",
+      "user_id": 1,
+      "status": "pending_payment",
+      "total_amount": 189,
+      "payment_method": "alipay",
+      "address_id": "1",
+      "created_at": "2025-12-12T07:24:36.038Z",
+      "expire_at": "2025-12-12T07:54:36.038Z",
+      "id": 5
+    },
+    {
+      "order_number": "20251212152841438",
+      "user_id": 1,
+      "status": "pending_payment",
+      "total_amount": 1999,
+      "payment_method": "alipay",
+      "address_id": "1",
+      "created_at": "2025-12-12T07:28:41.538Z",
+      "expire_at": "2025-12-12T07:58:41.538Z",
+      "id": 6
+    },
+    {
+      "order_number": "20251212154536326",
+      "user_id": 1,
+      "status": "pending_payment",
+      "total_amount": 179,
+      "payment_method": "alipay",
+      "address_id": "1",
+      "created_at": "2025-12-12T07:45:36.629Z",
+      "expire_at": "2025-12-12T08:15:36.629Z",
+      "id": 7
+    }
+  ],
+  "order_items": [
+    {
+      "id": 1,
+      "order_id": 101,
+      "product_id": 1,
+      "quantity": 1,
+      "price": 8999
+    },
+    {
+      "id": 2,
+      "order_id": 102,
+      "product_id": 31,
+      "quantity": 1,
+      "price": 189
+    },
+    {
+      "id": 3,
+      "order_id": 102,
+      "product_id": 32,
+      "quantity": 2,
+      "price": 99.5
+    },
+    {
+      "id": 4,
+      "order_id": 103,
+      "product_id": 35,
+      "quantity": 2,
+      "price": 79
+    },
+    {
+      "id": 5,
+      "order_id": 103,
+      "product_id": 33,
+      "quantity": 1,
+      "price": 135
+    },
+    {
+      "id": 6,
+      "order_id": 104,
+      "product_id": 39,
+      "quantity": 1,
+      "price": 299
+    },
+    {
+      "id": 7,
+      "order_id": 104,
+      "product_id": 40,
+      "quantity": 1,
+      "price": 199
+    },
+    {
+      "id": 8,
+      "order_id": 104,
+      "product_id": 18,
+      "quantity": 1,
+      "price": 299
+    },
+    {
+      "order_id": {
+        "order_number": "20251212152159428",
+        "user_id": 1,
+        "status": "pending_payment",
+        "total_amount": 189,
+        "payment_method": "alipay",
+        "address_id": "1",
+        "created_at": "2025-12-12T07:21:59.704Z",
+        "expire_at": "2025-12-12T07:51:59.704Z",
+        "id": 4
+      },
+      "product_id": 32,
+      "price": 189,
+      "quantity": 1,
+      "created_at": "2025-12-12T07:21:59.707Z",
+      "id": 8
+    },
+    {
+      "order_id": {
+        "order_number": "20251212152436220",
+        "user_id": 1,
+        "status": "pending_payment",
+        "total_amount": 189,
+        "payment_method": "alipay",
+        "address_id": "1",
+        "created_at": "2025-12-12T07:24:36.038Z",
+        "expire_at": "2025-12-12T07:54:36.038Z",
+        "id": 5
+      },
+      "product_id": 32,
+      "price": 189,
+      "quantity": 1,
+      "created_at": "2025-12-12T07:24:36.040Z",
+      "id": 9
+    },
+    {
+      "order_id": 6,
+      "product_id": 23,
+      "price": 1999,
+      "quantity": 1,
+      "created_at": "2025-12-12T07:28:41.540Z",
+      "id": 10
+    },
+    {
+      "order_id": 7,
+      "product_id": 22,
+      "price": 179,
+      "quantity": 1,
+      "created_at": "2025-12-12T07:45:36.632Z",
+      "id": 11
+    }
+  ],
+  "cart_items": [
+    {
+      "user_id": 4,
+      "product_id": 32,
+      "quantity": 1,
+      "id": 4,
+      "created_at": "2025-12-12T08:38:20.225Z"
+    },
+    {
+      "user_id": 1,
+      "product_id": 32,
+      "quantity": 1,
+      "id": 9,
+      "created_at": "2025-12-14T13:32:09.951Z"
+    },
+    {
+      "user_id": 1,
+      "product_id": 23,
+      "quantity": 1,
+      "id": 13,
+      "created_at": "2025-12-15T14:27:57.767Z"
+    },
+    {
+      "user_id": 1,
+      "product_id": 25,
+      "quantity": 1,
+      "id": 14,
+      "created_at": "2025-12-15T14:28:08.020Z"
+    }
+  ],
+  "addresses": [
+    {
+      "user_id": 1,
+      "receiver_name": "淘宝用户",
+      "receiver_phone": "15508077190",
+      "province": "四川省",
+      "city": "成都市",
+      "district": "双流区",
+      "detail_address": "川大第二段二号四川大学江安校区",
+      "is_default": false,
+      "id": 1,
+      "created_at": "2025-12-10T07:12:18.899Z"
+    },
+    {
+      "user_id": 1,
+      "receiver_name": "淘宝用户",
+      "receiver_phone": "15508077190",
+      "province": "四川省",
+      "city": "广州市",
+      "district": "浦东新区",
+      "detail_address": "一段一号",
+      "is_default": true,
+      "id": 2,
+      "created_at": "2025-12-10T08:00:00.000Z",
+      "updated_at": "2025-12-12T07:46:29.945Z"
+    }
+  ],
+  "sequences": {
+    "users": 5,
+    "categories": 11,
+    "shops": 11,
+    "products": 37,
+    "cart_items": 15,
+    "reviews": 8,
+    "orders": 8,
+    "order_items": 12,
+    "addresses": 3
+  }
+}

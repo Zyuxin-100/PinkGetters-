@@ -1,0 +1,150 @@
+<%- include('../partials/header', { title: '我的购物车', isAuthenticated: isAuthenticated }) %>
+
+<link rel="stylesheet" href="/css/style.css">
+
+<!-- 隐藏的登录状态标识，供JavaScript使用 -->
+<div id="login-status" data-logged-in="<%= isLoggedIn ? 'true' : 'false' %>" style="display: none;"></div>
+
+<!-- 调试信息 -->
+<div id="debug-info" style="display: none;">
+  <span id="debug-logged-in"><%= isLoggedIn %></span>
+  <span id="debug-authenticated"><%= isAuthenticated %></span>
+  <span id="debug-user"><%= user ? JSON.stringify(user) : 'null' %></span>
+</div>
+
+<main class="cart-bg">
+    <div class="container">
+        <!-- 返回按钮 -->
+        <div class="d-flex align-items-center mb-3">
+            <button onclick="history.back()" class="btn btn-back me-3" title="返回上一页">
+                <i class="bi bi-arrow-left"></i> 返回
+            </button>
+            <h2 class="mb-0 fw-bold">🛒 我的购物车</h2>
+        </div>
+        
+        <div class="row">
+            <div class="<%= (isLoggedIn && cartItems.length > 0) ? 'col-lg-9' : 'col-12' %>">
+                <div id="cart-list-container">
+                    <% if (isLoggedIn && cartItems.length > 0) { %>
+                        <!-- 登录用户的购物车商品 -->
+                        <% cartItems.forEach(item => { %>
+                            <div class="cart-item-card p-3 d-flex align-items-center" data-item-id="<%= item.id %>">
+                                <div class="form-check me-3">
+                                    <input class="form-check-input item-select-checkbox" type="checkbox" 
+                                           data-price="<%= item.price %>" data-quantity="<%= item.quantity %>" checked>
+                                </div>
+                                
+                                <img src="<%= item.imageUrl %>" class="product-image-small me-3" alt="<%= item.name %>">
+                                
+                                <div class="flex-grow-1">
+                                    <h5 class="item-name mb-1"><%= item.name %></h5>
+                                    <% if (item.specifications && item.specifications.length > 0) { %>
+                                        <p class="text-muted small mb-1">
+                                            <i class="bi bi-tags me-1"></i>
+                                            <% item.specifications.forEach((spec, index) => { %>
+                                                <span class="badge bg-light text-dark me-1"><%= spec %></span>
+                                            <% }); %>
+                                        </p>
+                                    <% } else { %>
+                                        <p class="text-muted small mb-1">
+                                            <i class="bi bi-tags me-1"></i>
+                                            <span class="badge bg-light text-dark me-1">默认规格</span>
+                                        </p>
+                                    <% } %>
+                                    <span class="item-price">¥ <%= item.price.toFixed(2) %></span>
+                                </div>
+                                
+                                <div class="d-flex align-items-center me-4">
+                                    <div class="quantity-control">
+                                        <button type="button" class="btn-minus" data-id="<%= item.id %>">-</button>
+                                        <input type="text" value="<%= item.quantity %>" class="form-control item-quantity" data-id="<%= item.id %>" readonly>
+                                        <button type="button" class="btn-plus" data-id="<%= item.id %>">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="text-end me-4">
+                                    <p class="mb-0 small text-muted">小计</p>
+                                    <span class="item-subtotal item-price">¥ <%= item.subtotal.toFixed(2) %></span>
+                                </div>
+                                
+                                <button type="button" class="btn btn-sm text-danger ms-3 btn-delete" data-id="<%= item.id %>">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <!-- 空购物车或未登录用户 -->
+                        <div class="empty-cart text-center py-5">
+                            <% if (showLoginPrompt) { %>
+                                <!-- 未登录状态 -->
+                                <i class="bi bi-person-x display-1 text-muted mb-3"></i>
+                                <h4 class="text-muted mb-3">尚未登录，请先登录</h4>
+                                <p class="text-muted mb-4">登录后可查看您的购物车商品</p>
+                                <a href="/auth/login" class="btn btn-primary me-2">立即登录</a>
+                                <a href="/auth/register" class="btn btn-outline-primary">注册账号</a>
+                            <% } else { %>
+                                <!-- 已登录但购物车为空 -->
+                                <i class="bi bi-cart-x display-1 text-muted mb-3"></i>
+                                <h4 class="text-muted mb-3">购物车为空</h4>
+                                <p class="text-muted mb-4">快去挑选您喜欢的商品吧</p>
+                                <a href="/" class="btn btn-primary me-2">返回首页</a>
+                                <a href="/shop" class="btn btn-outline-primary">浏览商店</a>
+                            <% } %>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+            
+            <% if (isLoggedIn && cartItems.length > 0) { %>
+            <div class="col-lg-3">
+                <div class="profile-card p-4 sticky-top" style="top: 100px;">
+                    <h4 class="mb-4 fw-bold">订单汇总</h4>
+                    
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>已选商品数量:</span>
+                        <span id="selected-count" class="fw-bold">0</span>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between mb-4">
+                        <span class="fw-bold">总计金额:</span>
+                        <span id="selected-total" class="item-price fs-4">¥ 0.00</span>
+                    </div>
+                    
+                    <button id="checkout-btn" class="btn btn-checkout w-100 btn-lg" disabled>去结算</button>
+                    
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</main>
+
+<% if (isLoggedIn && cartItems.length > 0) { %>
+<div class="fixed-bottom cart-summary bg-white p-3 border-top">
+    <div class="container d-flex justify-content-between align-items-center">
+        
+        <div class="d-flex align-items-center">
+            <div class="form-check me-4">
+                <input class="form-check-input" type="checkbox" id="selectAllCheckbox">
+                <label class="form-check-label fw-bold" for="selectAllCheckbox">
+                    商品全选
+                </label>
+            </div>
+            <button id="delete-selected-btn" class="btn btn-sm btn-outline-danger ms-3" disabled>批量删除</button>
+        </div>
+        
+        <div class="d-flex align-items-center">
+            <div class="me-4 text-end">
+                <span class="text-muted small">已选商品 (<span id="summary-count">0</span> 件)</span><br>
+                <span class="fs-5 fw-bold" style="color: #FF6B9D;">总价：<span id="summary-total">¥ 0.00</span></span>
+            </div>
+            <button id="summary-checkout-btn" class="btn btn-checkout btn-lg px-5" disabled>去结算 (<span id="summary-final-count">0</span>)</button>
+        </div>
+    </div>
+</div>
+<% } %>
+
+<%- include('../partials/footer') %>
+
+<script src="/js/common.js"></script>
+<script src="/js/cart_page.js"></script>

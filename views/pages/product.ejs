@@ -1,0 +1,114 @@
+<%- include('../partials/header', { title: '商品详情', isAuthenticated: typeof isAuthenticated !== 'undefined' ? isAuthenticated : false }) %>
+
+<main class="container my-5 product-page" data-product-id="<%= productId %>">
+    <!-- 扁平半透明返回 pill（图标 + 文案） -->
+    <a href="#" id="btn-back" class="product-back-pill" aria-label="返回上页" title="返回上页">
+        <i class="bi bi-chevron-left"></i>
+        <span class="ms-2">返回</span>
+    </a>
+    <div class="row g-4">
+        <!-- 左侧：商品介绍 6/10 -->
+        <div class="col-12 col-lg-7">
+            <!-- 店铺信息（含客服 / 进店 按钮） -->
+            <section class="shop-card d-flex align-items-center justify-content-between gap-3 mb-3">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="shop-logo placeholder-glow" id="shop-logo"></div>
+                    <div>
+                        <div class="d-flex align-items-center gap-2 mb-1">
+                            <h5 class="mb-0" id="shop-name">加载中...</h5>
+                            <span class="badge rounded-pill bg-soft-pink" id="shop-rating">--</span>
+                        </div>
+                        <p class="text-muted mb-1 small" id="shop-desc">加载中...</p>
+                        <div class="text-muted small" id="shop-address"></div>
+                    </div>
+                </div>
+                <div class="shop-actions d-flex gap-2 align-items-center">
+                    <button id="btn-chat" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-chat-dots me-1"></i>客服
+                    </button>
+                    <a id="btn-open-shop" class="btn btn-outline-primary btn-sm" href="#">
+                    <i class="bi bi-shop me-1"></i>进店
+                    </a>
+                </div>
+            </section>
+
+            <!-- 商品图片轮播 -->
+            <section class="product-gallery card mb-4">
+                <div class="row g-3">
+                    <div class="col-3 col-sm-3">
+                        <div class="thumb-list" id="thumb-list">
+                            <!-- Thumbnails injected -->
+                        </div>
+                    </div>
+                    <div class="col-9 col-sm-9">
+                        <div id="main-image" class="main-image placeholder-glow"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 商品详情 & 用户评价 -->
+            <section class="card mb-4 product-detail-card">
+                <div class="card-header d-flex gap-3 border-0 bg-transparent">
+                    <button class="btn btn-link px-0 active" data-target="#detail-section">商品详情</button>
+                    <button class="btn btn-link px-0" data-target="#review-section">用户评价</button>
+                </div>
+                <div class="card-body">
+                    <div id="detail-section">
+                        <h5 class="mb-3">商品描述</h5>
+                        <p class="text-muted" id="product-description">加载中...</p>
+                        <div class="row g-3" id="product-meta">
+                            <!-- meta injected -->
+                        </div>
+                    </div>
+                    <div id="review-section" class="mt-4">
+                        <h5 class="mb-3">用户评价</h5>
+                        <div id="review-list">
+                            <p class="text-muted">暂无评价，期待你的第一条评论～</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 右侧：选购信息 4/10 -->
+        <div class="col-12 col-lg-5">
+            <div class="card product-purchase-card">
+                <div class="card-body">
+                    <h3 class="product-title" id="product-name">加载中...</h3>
+                    <p class="text-muted mb-2" id="product-category"></p>
+                    <div class="product-price-lg mb-3" id="product-price">--</div>
+                    <p class="text-muted small mb-3" id="product-stock"></p>
+                    <p class="text-muted small" id="product-ship">承诺48小时内发货 | 极速配送</p>
+
+                    <!-- 商品可选项（颜色/尺码/规格等）由 JS 渲染 -->
+                    <div id="product-options" class="mb-3"></div>
+
+                    <!-- 数量不跟随按钮悬浮 -->
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <label class="text-muted small mb-0">数量</label>
+                        <div class="quantity-control">
+                            <button class="btn btn-sm btn-outline-primary" id="qty-decrease">-</button>
+                            <input type="number" id="qty-input" min="1" value="1">
+                            <button class="btn btn-sm btn-outline-primary" id="qty-increase">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="purchase-actions">
+                    <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center w-100">
+                        <button class="btn btn-outline-primary w-100" id="btn-add-cart">加入购物车</button>
+                        <button class="btn btn-primary w-100" id="btn-buy-now">立即购买</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- 底部悬浮操作条 -->
+<div class="product-action-bar" aria-hidden="false">
+    <button id="btn-add-cart-float" class="btn btn-cart">加入购物车</button>
+    <button id="btn-buy-now-float" class="btn btn-buy">立即选购</button>
+</div>
+
+<%- include('../partials/footer') %>
+

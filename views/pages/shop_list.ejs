@@ -1,0 +1,96 @@
+<%- include('../partials/header', { title: '商店列表', isAuthenticated: isAuthenticated }) %>
+
+<link rel="stylesheet" href="/css/style.css">
+
+<main>
+    <div class="container">
+        <!-- 页面标题 -->
+        <div class="d-flex align-items-center mt-3 mb-4">
+            <button onclick="history.back()" class="btn btn-back me-3" title="返回上一页">
+                <i class="bi bi-arrow-left"></i> 返回
+            </button>
+            <h2 class="mb-0 fw-bold">🏪 商店列表</h2>
+        </div>
+        
+        <!-- 商店网格 -->
+        <div class="row">
+            <% if (shops && shops.length > 0) { %>
+                <% shops.forEach(shop => { %>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card shop-card h-100">
+                            <!-- 商店横幅 -->
+                            <div class="shop-banner" style="background-image: url('<%= shop.banner_url || shop.logo_url || "https://via.placeholder.com/400x200?text=商店" %>');">
+                                <div class="shop-overlay">
+                                    <img src="<%= shop.logo_url || "https://via.placeholder.com/80?text=Logo" %>" 
+                                         class="shop-logo" alt="<%= shop.name %>">
+                                </div>
+                            </div>
+                            
+                            <!-- 商店信息 -->
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold"><%= shop.name %></h5>
+                                <p class="card-text text-muted small"><%= shop.description || '暂无描述' %></p>
+                                
+                                <!-- 商店统计 -->
+                                <div class="shop-stats mb-3">
+                                    <div class="row text-center">
+                                        <div class="col-4">
+                                            <div class="stat-item">
+                                                <div class="stat-number"><%= shop.productCount %></div>
+                                                <div class="stat-label">商品</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-item">
+                                                <div class="stat-number">
+                                                    <% if (shop.rating) { %>
+                                                        <%= shop.rating.toFixed(1) %>
+                                                    <% } else { %>
+                                                        4.5
+                                                    <% } %>
+                                                </div>
+                                                <div class="stat-label">评分</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="stat-item">
+                                                <div class="stat-number">¥<%= shop.avgPrice || '0' %></div>
+                                                <div class="stat-label">均价</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 商店地址 -->
+                                <% if (shop.address) { %>
+                                    <p class="text-muted small mb-2">
+                                        <i class="bi bi-geo-alt me-1"></i>
+                                        <%= shop.address %>
+                                    </p>
+                                <% } %>
+                                
+                                <!-- 进入商店按钮 -->
+                                <a href="/shop/<%= shop.id %>" class="btn btn-primary w-100">
+                                    <i class="bi bi-shop me-1"></i>
+                                    进入商店
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <!-- 空状态 -->
+                <div class="col-12">
+                    <div class="text-center py-5">
+                        <i class="bi bi-shop display-1 text-muted mb-3"></i>
+                        <h4 class="text-muted mb-3">暂无商店</h4>
+                        <p class="text-muted mb-4">目前还没有商店入驻</p>
+                        <a href="/" class="btn btn-primary">返回首页</a>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %> 

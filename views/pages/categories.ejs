@@ -1,0 +1,27 @@
+<%- include('../partials/header', { title: '分类', isAuthenticated: typeof isAuthenticated !== 'undefined' ? isAuthenticated : false }) %>
+
+<main class="container my-5">
+<section class="mb-4">
+    <div class="d-flex align-items-center">
+        <div class="flex-shrink-0">
+            <h1 class="page-title mb-1">商品分类</h1>
+        </div>
+        
+        <!-- 顶部小分类栏：点击跳转到对应分类块 -->
+        <div class="category-mini-container flex-grow-1 ms-3">
+            <div id="category-mini-bar" class="d-flex gap-2 py-2" aria-label="小分类导航">
+                <!-- 小分类 pill 将由 JS 注入 -->
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section aria-label="分类列表">
+        <div id="all-categories" class="accordion">
+            <!-- 每个分类可以作为一个折叠项 -->
+        </div>
+    </section>
+
+</main>
+
+<%- include('../partials/footer') %>

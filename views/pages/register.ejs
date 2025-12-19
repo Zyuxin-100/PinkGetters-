@@ -1,0 +1,73 @@
+<%- include('../partials/header', { title: '用户注册', isAuthenticated: false }) %>
+
+<link rel="stylesheet" href="/css/style.css"> 
+
+<main class="login-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="card card-login">
+                    <div class="card-body p-5">
+                        <h2 class="card-title text-center mb-5">新用户注册 📝</h2>
+                       
+                        <form id="registerForm">
+                            
+                            <div class="mb-3">
+                                <label for="username" class="form-label">用户名</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label">电子邮箱</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">手机号码 <small class="text-muted">(可选)</small></label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="请输入11位手机号">
+                                <div class="invalid-feedback"></div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">设置密码</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                                <div class="form-text text-muted">
+                                    <small>密码要求：6-20位，至少包含一个字母和一个数字</small>
+                                </div>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="confirmPassword" class="form-label">确认密码</label>
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            
+                            <!-- 错误汇总区域 -->
+                            <div class="alert alert-danger d-none" id="errorAlert" role="alert">
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                                    <strong>注册失败</strong>
+                                </div>
+                                <div id="errorMessage"></div>
+                                <ul id="errorList" class="mb-0 mt-2 d-none"></ul>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary w-100 mb-4">🚀 立即注册</button>
+                            
+                            <div class="text-center">
+                                <a href="/auth/login" class="text-decoration-none" style="color: #FF6B9D;">已有账号？立即登录</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="/js/register.js"></script>
+
+<%- include('../partials/footer') %>

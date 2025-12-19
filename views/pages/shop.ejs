@@ -1,0 +1,114 @@
+<%- include('../partials/header', { title: shop.name, isAuthenticated: isAuthenticated }) %>
+
+<link rel="stylesheet" href="/css/style.css">
+
+<main class="container mt-0 mb-5">
+    
+    <!-- 返回按钮 -->
+    <div class="d-flex align-items-center mb-2 mt-3">
+        <button onclick="history.back()" class="btn btn-back me-3" title="返回上一页">
+            <i class="bi bi-arrow-left"></i> 返回
+        </button>
+    </div>
+    
+    <div class="shop-brand-area mb-4">
+        <% if (shop.banner_url) { %>
+        <div class="shop-banner-placeholder bg-pink-light" 
+             style="height: 180px; background-image: url('<%= shop.banner_url %>'); background-size: cover; background-position: center; border-radius: 15px 15px 0 0;">
+        </div>
+        <% } else { %>
+        <div class="shop-banner-placeholder bg-pink-light" 
+             style="height: 180px; background-size: cover; background-position: center; border-radius: 15px 15px 0 0;">
+        </div>
+        <% } %>
+        
+        <div class="profile-card p-4 bg-white shadow-lg rounded-3" style="margin-top: -50px; position: relative; z-index: 10;">
+            <div class="d-flex align-items-center">
+                
+                <img src="<%= shop.logo_url || 'https://via.placeholder.com/100x100?text=Logo' %>" class="shop-logo-large me-4 border border-5" alt="<%= shop.name %> Logo">
+                
+                <div class="flex-grow-1">
+                    <h2 class="fw-bolder mb-1 shop-name fs-2"><%= shop.name %></h2>
+                    
+                    <div class="text-muted small mb-2">
+                        <span class="me-3"><i class="bi bi-star-fill text-warning me-1"></i> 评分: <strong class="text-dark"><%= shop.rating %></strong></span>
+                        <span class="me-3"><i class="bi bi-calendar-event me-1"></i> 注册: <strong class="text-dark"><%= shop.registerDate %></strong></span>
+                        <span><i class="bi bi-box me-1"></i> 商品数: <strong class="text-dark"><%= shop.productCount %></strong></span>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary rounded-pill btn-lg shop-follow-btn ms-4">
+                    <i class="bi bi-heart me-1"></i> 关注
+                </button>
+            </div>
+            
+            <p class="text-muted mt-3 shop-description border-top pt-3"><%= shop.description %></p>
+        </div>
+    </div>
+
+    <div class="shop-controls mb-4 p-3 bg-pink-light rounded-3 d-flex justify-content-between align-items-center sticky-top-controls shadow-sm">
+  
+        <div class="btn-group product-category-filter" role="group">
+            <% shop.categories.forEach((cat, index) => { %>
+                <button type="button" 
+                        class="btn btn-sm btn-outline-primary <%= index === 0 ? 'active' : '' %>" 
+                        data-category="<%= cat === '全部' ? 'all' : cat.toLowerCase() %>">
+                    <%= cat %>
+                </button>
+            <% }); %>
+        </div>
+
+        <div class="dropdown">
+            <button class="btn btn-sm btn-outline-primary dropdown-toggle rounded-pill" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                默认排序
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow border-0" aria-labelledby="sortDropdown">
+                <li><a class="dropdown-item active" href="#" data-sort="default">默认排序</a></li>
+                <li><a class="dropdown-item" href="#" data-sort="price_asc">价格 ↑</a></li>
+                <li><a class="dropdown-item" href="#" data-sort="price_desc">价格 ↓</a></li>
+                <li><a class="dropdown-item" href="#" data-sort="sales_desc">销量高到低</a></li>
+                <li><a class="dropdown-item" href="#" data-sort="newest">上新时间</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4" id="product-list-container">
+        <% shop.products.forEach(product => { %>
+            <div class="col product-col" data-category="<%= product.category %>">
+                <a href="/product/<%= product.id %>" class="text-decoration-none text-dark">
+                    <div class="product-card card h-100 shadow-sm border-0 transition-hover">
+                        <div class="product-img-wrapper" style="overflow: hidden; border-radius: 8px 8px 0 0;">
+                            <img src="<%= product.imageUrl %>" class="card-img-top product-img" alt="<%= product.name %>" style="aspect-ratio: 4/3; object-fit: cover;">
+                        </div>
+               
+                        <div class="card-body p-3">
+                            <h6 class="card-title product-name mb-1 text-truncate fw-normal"><%= product.name %></h6>
+                            
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <span class="price-text fw-bold fs-4">¥ <%= product.price.toFixed(2) %></span>
+                                <span class="badge bg-pink-bg text-muted small border border-light">销量: <%= product.sales %></span>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer p-2 text-end bg-transparent border-0">
+                            <button class="btn btn-outline-primary add-to-cart-btn rounded-circle" data-product-id="<%= product.id %>" title="加入购物车">
+                                 <i class="bi bi-cart-plus fs-5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        <% }); %>
+    </div>
+    
+    <div class="text-center mt-5">
+        <button class="btn btn-primary btn-lg rounded-pill" id="load-more-btn">
+             <i class="bi bi-arrow-clockwise me-2"></i> 加载更多浪漫商品
+        </button>
+    </div>
+
+</main>
+
+<%- include('../partials/footer') %>
+
+<script src="/js/shop.js"></script>

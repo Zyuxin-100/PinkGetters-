@@ -1,0 +1,48 @@
+<%- include('../partials/header', { title: '用户登录', isAuthenticated: false }) %>
+
+<link rel="stylesheet" href="/css/style.css"> 
+
+<main class="login-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="card card-login">
+                    <div class="card-body p-5">
+                        <h2 class="card-title text-center mb-5">用户登录 💖</h2>
+                       
+                        <form id="loginForm">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">用户名</label>
+                                <input type="text" class="form-control" id="username" name="username" required> 
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label for="password" class="form-label">密码</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                                <div class="invalid-feedback"></div>
+                            </div>
+                            
+                            <div class="mb-4 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe">
+                                <label class="form-check-label" for="rememberMe">记住我</label>
+                            </div>
+                            
+                            <div class="alert alert-danger d-none" id="errorAlert" role="alert"></div>
+                            
+                            <button type="submit" class="btn btn-primary w-100 mb-4">✨ 立即登录</button>
+                            
+                            <div class="text-center">
+                                <a href="/auth/register" class="text-decoration-none" style="color: #FF6B9D;">还没有账号？立即注册</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('../partials/footer') %>
+
+<script src="/js/login.js"></script>

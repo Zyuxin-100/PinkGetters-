@@ -1,0 +1,102 @@
+<%- include('../partials/header', { title: category.name, isAuthenticated: typeof isAuthenticated !== 'undefined' ? isAuthenticated : false }) %>
+
+<main class="container my-5" data-category-id="<%= category.id %>">
+    <section class="mb-4">
+        <div class="d-flex flex-wrap align-items-start justify-content-between gap-3">
+            <div>
+                <h1 class="page-title mb-2 d-flex align-items-center gap-2">
+                    <%= category.name %>
+                </h1>
+                <% if (category.icon) { %>
+                    <p class="text-muted mb-0"><i class="bi bi-<%= category.icon %>"></i> 精选 <%= category.name %> 商品</p>
+                <% } else { %>
+                    <p class="text-muted mb-0">精选 <%= category.name %> 商品</p>
+                <% } %>
+            </div>
+            <div class="d-flex flex-wrap align-items-center gap-3">
+                <div class="sort-btn-group" role="group" aria-label="排序方式">
+                    <button type="button" class="sort-btn active" data-sort="new" title="按综合排序">
+                        <i class="bi bi-funnel"></i> 综合
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="sold_desc" title="按销量从高到低">
+                        <i class="bi bi-fire"></i> 热销
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="rating_desc" title="按评分从高到低">
+                        <i class="bi bi-star-fill"></i> 高分
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="new_desc" title="按最新上架排序">
+                        <i class="bi bi-clock-history"></i> 最新
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="price_asc" title="按价格从低到高">
+                        <i class="bi bi-arrow-down"></i> 价低
+                    </button>
+                    <button type="button" class="sort-btn" data-sort="price_desc" title="按价格从高到低">
+                        <i class="bi bi-arrow-up"></i> 价高
+                    </button>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" id="btn-filter" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-funnel"></i> 筛选
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end p-4" aria-labelledby="btn-filter" style="min-width: 320px;">
+                        <div class="mb-4">
+                            <label class="form-label mb-2">
+                                <i class="bi bi-wallet2"></i> 价格区间 (¥)
+                            </label>
+                            <div class="d-flex align-items-center gap-2">
+                                <input type="number" class="form-control form-control-sm" id="filter-price-min" placeholder="最低" min="0">
+                                <span class="text-muted small" style="white-space:nowrap;">—</span>
+                                <input type="number" class="form-control form-control-sm" id="filter-price-max" placeholder="最高" min="0">
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label mb-2">
+                                <i class="bi bi-star"></i> 最低评分
+                            </label>
+                            <select class="form-select form-select-sm" id="filter-rating">
+                                <option value="">不限</option>
+                                <option value="5">★★★★★ 5星</option>
+                                <option value="4">★★★★ 4星以上</option>
+                                <option value="3">★★★ 3星以上</option>
+                            </select>
+                        </div>
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="filter-instock">
+                            <label class="form-check-label" for="filter-instock">
+                                <i class="bi bi-box"></i> 仅看有货
+                            </label>
+                        </div>
+                        <div class="filter-actions">
+                            <button type="button" class="btn btn-light btn-sm" id="filter-reset">
+                                <i class="bi bi-arrow-counterclockwise"></i> 重置
+                            </button>
+                            <button type="button" class="btn btn-primary btn-sm" id="filter-apply">
+                                <i class="bi bi-check-circle"></i> 应用
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section aria-label="分类商品列表">
+        <div id="category-products" class="row g-4">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 d-none d-md-block">
+                <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 d-none d-lg-block">
+                <div class="loading-placeholder" style="height: 350px; border-radius: 20px;"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<%- include('../partials/footer') %>
+

@@ -1,0 +1,46 @@
+    <!-- Footer -->
+    <footer class="mt-5 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5><i class="bi bi-heart-fill"></i> PinkGetters</h5>
+                    <p>温暖你的每一天，精选好物等你来</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>快速链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/" class="text-white-50 text-decoration-none">首页</a></li>
+                        <li><a href="/categories" class="text-white-50 text-decoration-none">商品分类</a></li>
+                        <li><a href="/login" class="text-white-50 text-decoration-none">登录</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>联系我们</h5>
+                    <p><i class="bi bi-envelope"></i> contact@pinkgetters.com</p>
+                    <p><i class="bi bi-telephone"></i> 400-888-8888</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 PinkGetters. All rights reserved. Made with <i class="bi bi-heart-fill text-danger"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- 自定义JS -->
+    <script src="/js/common.js"></script>
+    <% if (typeof pageScript !== 'undefined') { %>
+        <script src="/js/<%= pageScript %>"></script>
+    <% } %>
+    <% if (typeof pageScripts !== 'undefined' && Array.isArray(pageScripts)) { %>
+        <% pageScripts.forEach(function(s) { %>
+            <script src="/js/<%= s %>"></script>
+        <% }) %>
+    <% } %>
+</body>
+</html>
+
